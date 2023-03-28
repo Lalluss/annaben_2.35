@@ -58,7 +58,7 @@ async def start(client, message):
                     InlineKeyboardButton('✇ Jᴏɪɴ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ ✇', url=CHNL_LNK)
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        m=await query.message.reply_text("ɪ")
+        m=await message.reply_text("ɪ")
         n=await m.edit("ᴀᴍ")
         o=await n.edit("ᴀɴɴᴀ ʙᴇɴ")
         await asyncio.sleep(1)
