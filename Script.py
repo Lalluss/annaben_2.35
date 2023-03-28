@@ -10,7 +10,7 @@ Hᴇʀᴇ Is Tʜᴇ Hᴇʟᴘ Fᴏʀ Mʏ Cᴏᴍᴍᴀɴᴅs.</b>"""
 ✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵
 ╔════❰ ꪖ᥇ꪮꪊ𝓽 ꪑ𝘴ᧁ ❱═❍⊱❁۪۪
 ║╭━━━━━━━━━━━━━━━➣ 
-║┣⪼ 𝙈𝙔 𝙉𝘼𝙈𝙀 - <a href="https://t.me/Botech_Bot"> 𝑨𝑵𝑵𝑨 𝑩𝑬𝑵 </a>
+║┣⪼ 𝙈𝙔 𝙉𝘼𝙈𝙀 - <a href="https://t.me/Botechs_Bot"> 𝑨𝑵𝑵𝑨 𝑩𝑬𝑵 </a>
 ║┣⪼ Ⓓ︎Ⓔ︎Ⓥ︎1 - <a href="https://t.me/Lallu_tgs"> Lalluᵗᵍ </a>
 ║┣⪼ ᑕᕼᗩᑎᑎEᒪ - <a href="https://t.me/EDIT_REPO"> 🅶︎🅰︎🅽︎🅶︎ </a>
 ║┣⪼ 𝓛𝓲𝓫𝓻𝓪𝓻𝓻𝔂 - 𝙿𝚈𝚁𝙾𝙶𝚁𝙰𝙼
