@@ -8,7 +8,7 @@ from telegraph import upload_file
 @Client.on_message(filters.photo & filters.private)
 async def telegraph(client, message):
 
-    await photo.reply_text(
+    await message.reply_text(
         text="<code>Downloading to My Server ...</code>",
         disable_web_page_preview=True
     )
