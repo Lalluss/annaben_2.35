@@ -41,9 +41,14 @@ SPELL_CHECK = {}
 SPELL_MODE = True
 
 SPELL_TXT = """➼ 𝑯𝒆𝒚 {mention}
+
 ➼ 𝑪𝒐𝒖𝒍𝒅𝒏'𝒕 𝒇𝒊𝒏𝒅 𝒂𝒏𝒚 𝒓𝒆𝒔𝒖𝒍𝒕𝒔 𝒇𝒐𝒓 {query}, 𝑫𝒐 𝒚𝒐𝒖 𝒔𝒆𝒂𝒓𝒄𝒉𝒆𝒅 𝒇𝒐𝒓 𝒕𝒉𝒊𝒔 𝒎𝒐𝒗𝒊𝒆 ?
-➼ 𝑪𝒉𝒆𝒄𝒌 𝒔𝒑𝒆𝒍𝒍𝒊𝒏𝒈 
+
+➼ 𝑪𝒉𝒆𝒄𝒌 𝒔𝒑𝒆𝒍𝒍𝒊𝒏𝒈
+ 
 ➼ 𝑵𝒐𝒕 𝑶𝑻𝑻 𝒓𝒆𝒍𝒆𝒂𝒔𝒆𝒅
+
+
       ｡◕MOVIE DETAILS◕｡
 ➣ Title: {title}
 ➣ Genre: {genres}
@@ -991,6 +996,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     
     elif query.data == "help":
+        await query.message.delete()
         buttons = [[
             InlineKeyboardButton('FIʟᴛᴇʀs', callback_data='filters'),
             InlineKeyboardButton('Fɪʟᴇ Sᴛᴏʀᴇ', callback_data='store_file')
@@ -1009,6 +1015,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup
         )
     elif query.data == "about":
+        await query.message.delete()
         buttons = [[
             InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ', url=GRP_LNK),
             InlineKeyboardButton('Sᴏᴜʀᴄᴇ Cᴏᴅᴇ', callback_data='source')
@@ -1016,15 +1023,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('Hᴏᴍᴇ', callback_data='start'),
             InlineKeyboardButton('Cʟᴏsᴇ', callback_data='close_data')
         ]]
-        await client.edit_message_media(
-            query.message.chat.id, 
-            query.message.id, 
-        )
         reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.ABOUT_TXT.format(temp.B_NAME),
+        await client.send_message(
+            text=script.ABOUT_TXT.format(query.from_user.mention),
+            chat_id=query.message.chat.id,
             reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
+            disable_web_page_preview=True,
+            parse_mode='html'
         )
     elif query.data == "source":
         buttons = [[
