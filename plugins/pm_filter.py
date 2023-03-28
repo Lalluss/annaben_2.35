@@ -932,6 +932,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer(text=script.SINFO, show_alert=True)
 
     elif query.data == "start":
+        await query.message.delete()
         buttons = [[
                     InlineKeyboardButton('ᴀᴅᴅ ᴍᴇ ᴛᴏ ᴜʀ ɢʀᴩ', url=f'https://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
@@ -946,19 +947,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
                   ]]
         
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.edit_message_media(
-            query.message.chat.id, 
-            query.message.id, 
-            InputMediaPhoto(random.choice(PICS))
-        )
-        await query.message.edit_text(
-            text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
+        await client.send_sticker(
+            sticker="CAACAgUAAxkBAAEIWoNkIwh1HrX8EEaXqkgGZXKX1gOymgACQAgAAp6lGVVUeWhnuKcXIy8E",
+            chat_id=query.message.chat.id,
+            reply_markup=reply_markup
         )
         await query.answer(MSG_ALRT)
 
     elif query.data == "filters":
+        await query.message.delete()
         buttons = [[
             InlineKeyboardButton('Mᴀɴᴜᴀʟ FIʟᴛᴇʀ', callback_data='manuelfilter'),
             InlineKeyboardButton('Aᴜᴛᴏ FIʟᴛᴇʀ', callback_data='autofilter')
@@ -968,31 +965,25 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.edit_message_media(
-            query.message.chat.id, 
-            query.message.id, 
-            InputMediaPhoto(random.choice(PICS))
-        )
-        await query.message.edit_text(
-            text=script.ALL_FILTERS.format(query.from_user.mention),
+        await client.send_message(
+            text=script.ALL_FILTERS_TXT.format(query.from_user.mention),
+            chat_id=query.message.chat.id,
             reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
+            disable_web_page_preview=True,
+            parse_mode=enums.ParseMode.HTML'
         )
 
     elif query.data == "global_filters":
+        await query.message.delete()
         buttons = [[
             InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='filters')
         ]]
-        await client.edit_message_media(
-            query.message.chat.id, 
-            query.message.id, 
-            InputMediaPhoto(random.choice(PICS))
-        )
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.GFILTER_TXT,
+        await client.send_message(
+            text=script.GFILTER_TXT.format(query.from_user.mention),
+            chat_id=query.message.chat.id,
             reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
+            disable_web_page_preview=True,
+            parse_mode=enums.ParseMode.HTML'
         )
     
     elif query.data == "help":
@@ -1029,118 +1020,98 @@ async def cb_handler(client: Client, query: CallbackQuery):
             chat_id=query.message.chat.id,
             reply_markup=reply_markup,
             disable_web_page_preview=True,
-            parse_mode='html'
+            parse_mode=enums.ParseMode.HTML'
         )
     elif query.data == "source":
+        await query.message.delete()
         buttons = [[
             InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.edit_message_media(
-            query.message.chat.id, 
-            query.message.id, 
-            InputMediaPhoto(random.choice(PICS))
-        )
-        await query.message.edit_text(
-            text=script.SOURCE_TXT,
+        await client.send_message(
+            text=script.SOURCE_TXT.format(query.from_user.mention),
+            chat_id=query.message.chat.id,
             reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
+            disable_web_page_preview=True,
+            parse_mode=enums.ParseMode.HTML'
         )
     elif query.data == "manuelfilter":
+        await query.message.delete()
         buttons = [[
             InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='filters'),
             InlineKeyboardButton('Bᴜᴛᴛᴏɴs', callback_data='button')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.edit_message_media(
-            query.message.chat.id, 
-            query.message.id, 
-            InputMediaPhoto(random.choice(PICS))
-        )
-        await query.message.edit_text(
-            text=script.MANUELFILTER_TXT,
+        await client.send_message(
+            text=script.MANUELFILTER_TXT.format(query.from_user.mention),
+            chat_id=query.message.chat.id,
             reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
+            disable_web_page_preview=True,
+            parse_mode=enums.ParseMode.HTML'
         )
     elif query.data == "button":
+        await query.message.delete()
         buttons = [[
             InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='manuelfilter')
         ]]
-        await client.edit_message_media(
-            query.message.chat.id, 
-            query.message.id, 
-            InputMediaPhoto(random.choice(PICS))
-        )
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.BUTTON_TXT,
+        await client.send_message(
+            text=script.BUTTON_TXT.format(query.from_user.mention),
+            chat_id=query.message.chat.id,
             reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
+            disable_web_page_preview=True,
+            parse_mode=enums.ParseMode.HTML'
         )
     elif query.data == "autofilter":
+        await query.message.delete()
         buttons = [[
             InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='filters')
         ]]
-        await client.edit_message_media(
-            query.message.chat.id, 
-            query.message.id, 
-            InputMediaPhoto(random.choice(PICS))
-        )
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.AUTOFILTER_TXT,
+        await client.send_message(
+            text=script.AUTOFILTER_TXT.format(query.from_user.mention),
+            chat_id=query.message.chat.id,
             reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
+            disable_web_page_preview=True,
+            parse_mode=enums.ParseMode.HTML'
         )
     elif query.data == "coct":
+        await query.message.delete()
         buttons = [[
             InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='help')
         ]]
-        await client.edit_message_media(
-            query.message.chat.id, 
-            query.message.id, 
-            InputMediaPhoto(random.choice(PICS))
-        )
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.CONNECTION_TXT,
+        await client.send_message(
+            text=script.CONNECTION_TXT.format(query.from_user.mention),
+            chat_id=query.message.chat.id,
             reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
+            disable_web_page_preview=True,
+            parse_mode=enums.ParseMode.HTML'
         )
     elif query.data == "extra":
+        await query.message.delete()
         buttons = [[
             InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='help'),
             InlineKeyboardButton('Aᴅᴍɪɴ', callback_data='admin')
         ]]
-        await client.edit_message_media(
-            query.message.chat.id, 
-            query.message.id, 
-            InputMediaPhoto(random.choice(PICS))
-        )
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.EXTRAMOD_TXT,
+        await client.send_message(
+            text=script.EXTRAMOD_TXT.format(query.from_user.mention),
+            chat_id=query.message.chat.id,
             reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
-    
+            disable_web_page_preview=True,
+            parse_mode=enums.ParseMode.HTML'
+        )    
     elif query.data == "store_file":
+        await query.message.delete()
         buttons = [[
             InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='help')
         ]]
-        await client.edit_message_media(
-            query.message.chat.id, 
-            query.message.id, 
-            InputMediaPhoto(random.choice(PICS))
-        )
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.FILE_STORE_TXT,
+        await client.send_message(
+            text=script.FILE_STORE_TXT.format(query.from_user.mention),
+            chat_id=query.message.chat.id,
             reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
-    
+            disable_web_page_preview=True,
+            parse_mode=enums.ParseMode.HTML'
+        )    
     elif query.data == "admin":
+        await query.message.delete()
         buttons = [[
             InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='extra')
         ]]
