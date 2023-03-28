@@ -87,7 +87,7 @@ async def start(client, message):
         await asyncio.sleep(1)
         await o.delete()
         await message.reply_sticker(
-            photo=random.choice(STICKER_PACK),
+            sticker=random.choice(STICKER_PACK),
          #   caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
          #   parse_mode=enums.ParseMode.HTML
