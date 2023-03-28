@@ -8,13 +8,13 @@ from telegraph import upload_file
 @Client.on_message(filters.photo & filters.private)
 async def telegraph(client, message):
 
-    await message.reply_message(
+    await message.reply_text(
         text="<code>Downloading to My Server ...</code>",
         disable_web_page_preview=True
     )
     media = await message.download()
     
-    await message.edit_message(
+    await text.edit_text(
         text="<code>Downloading Completed. Now I am Uploading to telegra.ph Link ...</code>",
         disable_web_page_preview=True
     )
