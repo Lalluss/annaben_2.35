@@ -1,5 +1,5 @@
 import os
-from plugins.texts import Fonts
+from plugins.modes.texts import Fonts
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
