@@ -25,7 +25,7 @@ async def start(client, message):
                     InlineKeyboardButton('ᴀᴅᴅ ᴍᴇ ᴛᴏ ᴜʀ ɢʀᴩ', url=f'https://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
                     InlineKeyboardButton('ᴍy ᴅᴇᴠ', url=f'http://t.me/Lallu_tgs'),
-                    InlineKeyboardButton('', url=f'https://t.me/EDIT_REPO')
+                    InlineKeyboardButton('ᴍy ɢʀᴩ', url=f'https://t.me/EDIT_REPO')
                 ],[
                     InlineKeyboardButton('ʜᴇʟᴩ', callback_data='help'),
                     InlineKeyboardButton('ᴀʙᴏᴜᴛ', callback_data='about'),
@@ -49,7 +49,7 @@ async def start(client, message):
                     InlineKeyboardButton('ᴀᴅᴅ ᴍᴇ ᴛᴏ ᴜʀ ɢʀᴩ', url=f'https://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
                     InlineKeyboardButton('ᴍy ᴅᴇᴠ', url=f'http://t.me/Lallu_tgs'),
-                    InlineKeyboardButton('', url=f'https://t.me/EDIT_REPO')
+                    InlineKeyboardButton('ᴍy ɢʀᴩ', url=f'https://t.me/EDIT_REPO')
                 ],[
                     InlineKeyboardButton('ʜᴇʟᴩ', callback_data='help'),
                     InlineKeyboardButton('ᴀʙᴏᴜᴛ', callback_data='about'),
