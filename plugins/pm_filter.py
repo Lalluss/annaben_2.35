@@ -962,8 +962,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ],[
             InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='help'),
             InlineKeyboardButton('Gʟᴏʙᴀʟ Fɪʟᴛᴇʀs', callback_data='global_filters')
-        ]]
-        
+        ]]        
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.send_message(
             text=script.ALL_FILTERS_TXT.format(query.from_user.mention),
@@ -972,20 +971,19 @@ async def cb_handler(client: Client, query: CallbackQuery):
             disable_web_page_preview=True,
             parse_mode=enums.ParseMode.HTML
         )
-
     elif query.data == "global_filters":
         await query.message.delete()
         buttons = [[
             InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='filters')
         ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
         await client.send_message(
             text=script.GFILTER_TXT.format(query.from_user.mention),
             chat_id=query.message.chat.id,
             reply_markup=reply_markup,
             disable_web_page_preview=True,
             parse_mode=enums.ParseMode.HTML
-        )
-    
+        )    
     elif query.data == "help":
         await query.message.delete()
         buttons = [[
@@ -1054,6 +1052,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='manuelfilter')
         ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
         await client.send_message(
             text=script.BUTTON_TXT.format(query.from_user.mention),
             chat_id=query.message.chat.id,
@@ -1066,6 +1065,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='filters')
         ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
         await client.send_message(
             text=script.AUTOFILTER_TXT.format(query.from_user.mention),
             chat_id=query.message.chat.id,
@@ -1078,6 +1078,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='help')
         ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
         await client.send_message(
             text=script.CONNECTION_TXT.format(query.from_user.mention),
             chat_id=query.message.chat.id,
@@ -1091,6 +1092,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='help'),
             InlineKeyboardButton('Aᴅᴍɪɴ', callback_data='admin')
         ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
         await client.send_message(
             text=script.EXTRAMOD_TXT.format(query.from_user.mention),
             chat_id=query.message.chat.id,
@@ -1103,6 +1105,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='help')
         ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
         await client.send_message(
             text=script.FILE_STORE_TXT.format(query.from_user.mention),
             chat_id=query.message.chat.id,
