@@ -12,7 +12,7 @@ async def telegraph(client, message):
         text="<code>Downloading to My Server ...</code>",
         disable_web_page_preview=True
     )
-    media = await update.download()
+    media = await message.download()
     
     await text.edit_text(
         text="<code>Downloading Completed. Now I am Uploading to telegra.ph Link ...</code>",
