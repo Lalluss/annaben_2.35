@@ -970,7 +970,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             chat_id=query.message.chat.id,
             reply_markup=reply_markup,
             disable_web_page_preview=True,
-            parse_mode=enums.ParseMode.HTML'
+            parse_mode=enums.ParseMode.HTML
         )
 
     elif query.data == "global_filters":
@@ -983,7 +983,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             chat_id=query.message.chat.id,
             reply_markup=reply_markup,
             disable_web_page_preview=True,
-            parse_mode=enums.ParseMode.HTML'
+            parse_mode=enums.ParseMode.HTML
         )
     
     elif query.data == "help":
@@ -1020,7 +1020,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             chat_id=query.message.chat.id,
             reply_markup=reply_markup,
             disable_web_page_preview=True,
-            parse_mode=enums.ParseMode.HTML'
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "source":
         await query.message.delete()
@@ -1033,7 +1033,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             chat_id=query.message.chat.id,
             reply_markup=reply_markup,
             disable_web_page_preview=True,
-            parse_mode=enums.ParseMode.HTML'
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "manuelfilter":
         await query.message.delete()
@@ -1047,7 +1047,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             chat_id=query.message.chat.id,
             reply_markup=reply_markup,
             disable_web_page_preview=True,
-            parse_mode=enums.ParseMode.HTML'
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "button":
         await query.message.delete()
@@ -1059,7 +1059,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             chat_id=query.message.chat.id,
             reply_markup=reply_markup,
             disable_web_page_preview=True,
-            parse_mode=enums.ParseMode.HTML'
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "autofilter":
         await query.message.delete()
@@ -1071,7 +1071,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             chat_id=query.message.chat.id,
             reply_markup=reply_markup,
             disable_web_page_preview=True,
-            parse_mode=enums.ParseMode.HTML'
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "coct":
         await query.message.delete()
@@ -1083,7 +1083,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             chat_id=query.message.chat.id,
             reply_markup=reply_markup,
             disable_web_page_preview=True,
-            parse_mode=enums.ParseMode.HTML'
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "extra":
         await query.message.delete()
@@ -1096,7 +1096,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             chat_id=query.message.chat.id,
             reply_markup=reply_markup,
             disable_web_page_preview=True,
-            parse_mode=enums.ParseMode.HTML'
+            parse_mode=enums.ParseMode.HTML
         )    
     elif query.data == "store_file":
         await query.message.delete()
@@ -1108,7 +1108,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             chat_id=query.message.chat.id,
             reply_markup=reply_markup,
             disable_web_page_preview=True,
-            parse_mode=enums.ParseMode.HTML'
+            parse_mode=enums.ParseMode.HTML
         )    
     elif query.data == "admin":
         await query.message.delete()
