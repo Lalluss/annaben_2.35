@@ -57,7 +57,7 @@ async def start(client, message):
                 ],[
                     InlineKeyboardButton('ᴜᴩᴅᴀᴛᴇꜱ', url=f'https://t.me/LSBOTZ_UPDATE')
                   ]]
-              reply_markup = InlineKeyboardMarkup(buttons)
+        reply_markup = InlineKeyboardMarkup(buttons)
         m=await message.reply_text("ɪ")
         n=await m.edit("ᴀᴍ")
         o=await n.edit("ᴀɴɴᴀ ʙᴇɴ")
