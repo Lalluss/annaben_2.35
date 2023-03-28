@@ -1307,7 +1307,7 @@ async def auto_filter(client, msg, spoll=False):
             return
         if 2 < len(message.text) < 100:
             search = message.text
-            files, offset, total_results = await get_search_results(search.lower(), offset=0, filter=True)
+            files, offset, total_results = await get_search_results(message.chat.id, search.lower(), offset=0, filter=True)
             if not files:
                 if SPELL_MODE:  
                     reply = search.replace(" ", "+")
