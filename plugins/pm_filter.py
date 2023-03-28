@@ -4,6 +4,7 @@ import re
 import ast
 import math
 import random
+import os
 
 from pyrogram.errors.exceptions.bad_request_400 import MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty
 from Script import script
@@ -36,6 +37,15 @@ logger.setLevel(logging.ERROR)
 BUTTONS = {}
 SPELL_CHECK = {}
 
+SPELL_MODE = True
+
+SPELL_TXT = """Hey {mention}
+Couldn't find any results for {query}, Do you searched for this movie ?
+Title: {title}
+Genre: {genre}
+Year: {year}
+Rating: {rating}
+"""
 
 @Client.on_message(filters.group & filters.text & filters.incoming)
 async def give_filter(client, message):
