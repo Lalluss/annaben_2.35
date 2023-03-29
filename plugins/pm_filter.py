@@ -594,6 +594,20 @@ async def cb_handler(client: Client, query: CallbackQuery):
                             ]
                         )
                     )
+            else:
+                send_file = await client.send_cached_media(
+                    chat_id=FILE_CHANNEL_ID,
+                    file_id=file_id,
+                    caption=f_caption
+                    )
+                btn = [[
+                    InlineKeyboardButton("💥JOIN CHANNEL💥", url='https://t.me/+OwPc0ngwyCY4M2I1')
+                ]]
+                reply_markup = InlineKeyboardMarkup(btn)
+                bb = await query.message.reply_text(
+                    text = f"Hi click the below link and download the movies🍿\n\nERROR? Click the join channel button and try again \n\n{send_file.link}",
+                    reply_markup = reply_markup
+                )
                 else:
                     await query.answer(f"Hᴇʏ {query.from_user.first_name}, Tʜɪs Is Nᴏᴛ Yᴏᴜʀ Mᴏᴠɪᴇ Rᴇǫᴜᴇsᴛ. Rᴇǫᴜᴇsᴛ Yᴏᴜʀ's !", show_alert=True)
                 await query.message.reply_text(f"{send_file.link}")
@@ -644,21 +658,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "pages":
         await query.answer()
-
-            else:
-                send_file = await client.send_cached_media(
-                    chat_id=FILE_CHANNEL_ID,
-                    file_id=file_id,
-                    caption=f_caption
-                    )
-                btn = [[
-                    InlineKeyboardButton("💥JOIN CHANNEL💥", url='https://t.me/+OwPc0ngwyCY4M2I1')
-                ]]
-                reply_markup = InlineKeyboardMarkup(btn)
-                bb = await query.message.reply_text(
-                    text = f"Hi click the below link and download the movies🍿\n\nERROR? Click the join channel button and try again \n\n{send_file.link}",
-                    reply_markup = reply_markup
-                )
 
     elif query.data.startswith("opnsetgrp"):
         ident, grp_id = query.data.split("#")
