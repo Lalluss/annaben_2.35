@@ -19,6 +19,7 @@ logger = logging.getLogger(__name__)
 BATCH_FILES = {}
 
 STICKER_PACK = ["CAACAgUAAxkBAAEIWoNkIwh1HrX8EEaXqkgGZXKX1gOymgACQAgAAp6lGVVUeWhnuKcXIy8E",
+                "CAACAgUAAxkBAAEIXIdkI8vMd0mF--GWCoMHyZH0uczIOAACKQoAAuZdIFU_0o8pOEWEDy8E",
 ]     
 
 
