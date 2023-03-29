@@ -577,7 +577,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 else:
                     await query.answer(f"Hᴇʏ {query.from_user.first_name}, Tʜɪs Is Nᴏᴛ Yᴏᴜʀ Mᴏᴠɪᴇ Rᴇǫᴜᴇsᴛ. Rᴇǫᴜᴇsᴛ Yᴏᴜʀ's !", show_alert=True)
                 else:
-                    send_file = await client.send_cached_media(
+                    await client.send_cached_media(
                        chat_id=FILE_CHANNEL_ID,
                        file_id=file_id,
                        caption=f_caption
