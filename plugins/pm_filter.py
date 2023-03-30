@@ -566,12 +566,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
             if AUTH_CHANNEL and not await is_subscribed(client, query):
                 if clicked == typed:
                     await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
+                    await query.message.reply_text(f"Fsub check")
                     return
                 else:
                     await query.answer(f"Hᴇʏ {query.from_user.first_name}, Tʜɪs Is Nᴏᴛ Yᴏᴜʀ Mᴏᴠɪᴇ Rᴇǫᴜᴇsᴛ. Rᴇǫᴜᴇsᴛ Yᴏᴜʀ's !", show_alert=True)
             elif settings['botpm']:
                 if clicked == typed:
                     await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
+                    await query.message.reply_text(f"BOTPM: Enabled {settings['botpm']}")
                     return
                 else:
                     await query.answer(f"Hᴇʏ {query.from_user.first_name}, Tʜɪs Is Nᴏᴛ Yᴏᴜʀ Mᴏᴠɪᴇ Rᴇǫᴜᴇsᴛ. Rᴇǫᴜᴇsᴛ Yᴏᴜʀ's !", show_alert=True)
@@ -611,10 +613,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
         except UserIsBlocked:
             await query.answer('Uɴʙʟᴏᴄᴋ ᴛʜᴇ ʙᴏᴛ ᴍᴀʜɴ !', show_alert=True)
         except PeerIdInvalid:
+            await query.message.reply_text(f"peer id")
             await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
         except Exception as e:
             await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
-            await message.reply_text(f"{e}")
+            await query.message.reply_text(f"{e}")
     elif query.data.startswith("checksub"):
         if AUTH_CHANNEL and not await is_subscribed(client, query):
             await query.answer("Jᴏɪɴ ᴏᴜʀ Bᴀᴄᴋ-ᴜᴘ ᴄʜᴀɴɴᴇʟ ᴍᴀʜɴ! 😒", show_alert=True)
