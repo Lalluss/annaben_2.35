@@ -572,20 +572,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 if clicked == typed:
                     await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
                     return
-            else:
-                await client.send_cached_media(
-                    chat_id=FILE_CHANNEL_ID,
-                    file_id=file_id,
-                    caption=f_caption
-                    )
-                btn = [[
-                    InlineKeyboardButton("💥JOIN CHANNEL💥", url='https://t.me/+OwPc0ngwyCY4M2I1')
-                ]]
-                reply_markup = InlineKeyboardMarkup(btn)
-                bb = await query.message.reply_text(
-                    text = f"Hi click the below link and download the movies🍿\n\nERROR? Click the join channel button and try again \n\n{send_file.link}",
-                    reply_markup = reply_markup
-                )
              else:
                 if clicked == typed:
                     await client.send_cached_media(
@@ -607,6 +593,20 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 else:
                     await query.answer(f"Hᴇʏ {query.from_user.first_name}, Tʜɪs Is Nᴏᴛ Yᴏᴜʀ Mᴏᴠɪᴇ Rᴇǫᴜᴇsᴛ. Rᴇǫᴜᴇsᴛ Yᴏᴜʀ's !", show_alert=True)
                 await query.answer('Check PM, I have sent files in pm',show_alert = True)
+            else:
+                send_file = await client.send_cached_media(
+                    chat_id=FILE_CHANNEL_ID,
+                    file_id=file_id,
+                    caption=f_caption
+                    )
+                btn = [[
+                    InlineKeyboardButton("💥JOIN CHANNEL💥", url='https://t.me/+OwPc0ngwyCY4M2I1')
+                ]]
+                reply_markup = InlineKeyboardMarkup(btn)
+                bb = await query.message.reply_text(
+                    text = f"Hi click the below link and download the movies🍿\n\nERROR? Click the join channel button and try again \n\n{send_file.link}",
+                    reply_markup = reply_markup
+                )
         except UserIsBlocked:
             await query.answer('Uɴʙʟᴏᴄᴋ ᴛʜᴇ ʙᴏᴛ ᴍᴀʜɴ !', show_alert=True)
         except PeerIdInvalid:
