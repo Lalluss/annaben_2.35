@@ -592,9 +592,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
                             ]
                         )
                     )
-                else:
-                    await query.answer(f"Hᴇʏ {query.from_user.first_name}, Tʜɪs Is Nᴏᴛ Yᴏᴜʀ Mᴏᴠɪᴇ Rᴇǫᴜᴇsᴛ. Rᴇǫᴜᴇsᴛ Yᴏᴜʀ's !", show_alert=True)
-                await query.answer('Check PM, I have sent files in pm',show_alert = True)
             else:
                 file_send=await client.send_cached_media(
                     chat_id=FILE_CHANNEL,
@@ -622,6 +619,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
                         ]
                     )
                 )
+                else:
+                    await query.answer(f"Hᴇʏ {query.from_user.first_name}, Tʜɪs Is Nᴏᴛ Yᴏᴜʀ Mᴏᴠɪᴇ Rᴇǫᴜᴇsᴛ. Rᴇǫᴜᴇsᴛ Yᴏᴜʀ's !", show_alert=True)
+                await query.answer('Check PM, I have sent files in pm',show_alert = True)
                 if settings['auto_delete']:
                     await asyncio.sleep(600)
                     await Lallu_tg.delete()
