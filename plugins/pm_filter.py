@@ -577,7 +577,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     reply_markup=InlineKeyboardMarkup(
                         [
                             [
-                                InlineKeyboardButton("🔥 Cʜᴀɴɴᴇʟ 🔥", url=(MAIN_CHANNEL))
+                                InlineKeyboardButton("🔥 Cʜᴀɴɴᴇʟ 🔥", url=('https://t.me/LSBOTZ_UPDATE'))
                             ]
                         ]
                     )
