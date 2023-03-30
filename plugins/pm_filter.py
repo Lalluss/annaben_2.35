@@ -568,28 +568,18 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 if clicked == typed:
                     await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
                     return
-            else:
-                send_file = await client.send_cached_media(
-                    chat_id=FILE_CHANNEL_ID,
-                    file_id=file_id,
-                    caption=f_caption
-                    )
-                btn = [[
-                    InlineKeyboardButton("💥JOIN CHANNEL💥", url='https://t.me/+OwPc0ngwyCY4M2I1')
-                ]]
-                reply_markup = InlineKeyboardMarkup(btn)
-                bb = await query.message.reply_text(
-                    text = f"Hi click the below link and download the movies🍿\n\nERROR? Click the join channel button and try again \n\n{send_file.link}",
-                    reply_markup = reply_markup
-                )
+                else:
+                    await query.answer(f"Hᴇʏ {query.from_user.first_name}, Tʜɪs Is Nᴏᴛ Yᴏᴜʀ Mᴏᴠɪᴇ Rᴇǫᴜᴇsᴛ. Rᴇǫᴜᴇsᴛ Yᴏᴜʀ's !", show_alert=True)
             elif settings['botpm']:
                 if clicked == typed:
                     await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
                     return
-             else:
+                else:
+                    await query.answer(f"Hᴇʏ {query.from_user.first_name}, Tʜɪs Is Nᴏᴛ Yᴏᴜʀ Mᴏᴠɪᴇ Rᴇǫᴜᴇsᴛ. Rᴇǫᴜᴇsᴛ Yᴏᴜʀ's !", show_alert=True)
+            else:
                 if clicked == typed:
-                    await client.send_cached_media(
-                        chat_id=query.from_user.id,
+                    joelkb_creatorbeatz = await client.send_cached_media(
+                        chat_id=FILE_CHANNEL_ID,
                         file_id=file_id,
                         caption=f_caption,
                         protect_content=True if ident == "filep" else False,
@@ -604,6 +594,18 @@ async def cb_handler(client: Client, query: CallbackQuery):
                             ]
                         )
                     )
+                    joelkb_msg = await query.message.reply_text(
+                        text=f"<b>Hey {query.from_user.mention}, Your file is ready, Click on the 'Get File' button below to get your file.\nIf you can't access the file, click on the 'Join Channel' Button below and join before clicking on the 'Get File' button !</b>",
+                        parse_mode=enums.ParseMode.HTML,
+                        reply_markup=InlineKeyboardMarkup(
+                            [[
+                                InlineKeyboardButton("💥JOIN CHANNEL💥", url='https://t.me/+OwPc0ngwyCY4M2I1')
+                            ]]
+                        )
+                    )
+                    await asyncio.sleep(600)
+                    await joelkb_creatorbeatz.delete()
+                    await joelkb_msg.delete()
                 else:
                     await query.answer(f"Hᴇʏ {query.from_user.first_name}, Tʜɪs Is Nᴏᴛ Yᴏᴜʀ Mᴏᴠɪᴇ Rᴇǫᴜᴇsᴛ. Rᴇǫᴜᴇsᴛ Yᴏᴜʀ's !", show_alert=True)
                 await query.answer('Check PM, I have sent files in pm',show_alert = True)
