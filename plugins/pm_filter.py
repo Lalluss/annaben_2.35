@@ -580,7 +580,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             else:
                 if clicked == typed:
                     joelkb_creatorbeatz = await client.send_cached_media(
-                        chat_id=FILE_CHANNEL_ID,
+                        chat_id=int(FILE_CHANNEL_ID),
                         file_id=file_id,
                         caption=f_caption,
                         protect_content=True if ident == "filep" else False,
