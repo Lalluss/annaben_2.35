@@ -1,4 +1,5 @@
 # Kanged From @TroJanZheX
+# Redirect added by @Joelkb
 import asyncio
 import re
 import ast
@@ -12,7 +13,7 @@ import pyrogram
 from database.connections_mdb import active_connection, all_connections, delete_connection, if_active, make_active, \
     make_inactive
 from info import ADMINS, AUTH_CHANNEL, AUTH_USERS, SUPPORT_CHAT_ID, CUSTOM_FILE_CAPTION, MSG_ALRT, PICS, AUTH_GROUPS, P_TTI_SHOW_OFF, GRP_LNK, CHNL_LNK, NOR_IMG, LOG_CHANNEL, SPELL_IMG, MAX_B_TN, IMDB, \
-    SINGLE_BUTTON, SPELL_CHECK_REPLY, IMDB_TEMPLATE, NO_RESULTS_MSG
+    SINGLE_BUTTON, SPELL_CHECK_REPLY, IMDB_TEMPLATE, NO_RESULTS_MSG, FILE_CHANNEL_ID
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, InputMediaPhoto
 from pyrogram import Client, filters, enums
 from pyrogram.errors import FloodWait, UserIsBlocked, MessageNotModified, PeerIdInvalid
@@ -55,8 +56,6 @@ SPELL_TXT = """➼ 𝑯𝒆𝒚 {mention}
 ➣ Year: {year}
 ➣ Rating: {rating}
 """
-
-FILE_CHANNEL_ID = -1001612403432
 
 @Client.on_message(filters.group & filters.text & filters.incoming)
 async def give_filter(client, message):
