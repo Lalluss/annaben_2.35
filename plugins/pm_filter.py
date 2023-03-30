@@ -600,6 +600,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
                         parse_mode=enums.ParseMode.HTML,
                         reply_markup=InlineKeyboardMarkup(
                             [[
+                                InlineKeyboardButton("Get File", url=joelkb_creatorbeatz.link)
+                            ],[
                                 InlineKeyboardButton("💥JOIN CHANNEL💥", url='https://t.me/+OwPc0ngwyCY4M2I1')
                             ]]
                         )
