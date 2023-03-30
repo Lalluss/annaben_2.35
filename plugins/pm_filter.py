@@ -56,7 +56,7 @@ SPELL_TXT = """➼ 𝑯𝒆𝒚 {mention}
 ➣ Rating: {rating}
 """
 
-FILE_CHANNEL = -1001612403432
+FILE_CHANNEL_ID = -1001612403432
 
 @Client.on_message(filters.group & filters.text & filters.incoming)
 async def give_filter(client, message):
