@@ -573,31 +573,18 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
                     return
             else:
-                file_send=await client.send_cached_media(
-                    chat_id=FILE_CHANNEL,
+                await client.send_cached_media(
+                    chat_id=FILE_CHANNEL_ID,
                     file_id=file_id,
-                    caption=script.CHANNEL_CAP.format(query.from_user.mention, title, query.message.chat.title),
-                    protect_content=True if ident == "filep" else False,
-                    reply_markup=InlineKeyboardMarkup(
-                        [
-                            [
-                                InlineKeyboardButton("🔥 Cʜᴀɴɴᴇʟ 🔥", url=('https://t.me/LSBOTZ_UPDATE'))
-                            ]
-                        ]
+                    caption=f_caption
                     )
-                )
-                Lallu_tg = await query.message.reply_text(
-                    script.FILE_MSG.format(query.from_user.mention, title, size),
-                    parse_mode=enums.ParseMode.HTML,
-                    reply_markup=InlineKeyboardMarkup(
-                        [
-                         [
-                          InlineKeyboardButton('📥 Dᴏᴡɴʟᴏᴀᴅ Lɪɴᴋ 📥 ', url = file_send.link)
-                       ],[
-                          InlineKeyboardButton("⚠️ Cᴀɴ'ᴛ Aᴄᴄᴇss ? Cʟɪᴄᴋ Hᴇʀᴇ ⚠️", url=(FILE_FORWARD))
-                         ]
-                        ]
-                    )
+                btn = [[
+                    InlineKeyboardButton("💥JOIN CHANNEL💥", url='https://t.me/+OwPc0ngwyCY4M2I1')
+                ]]
+                reply_markup = InlineKeyboardMarkup(btn)
+                bb = await query.message.reply_text(
+                    text = f"Hi click the below link and download the movies🍿\n\nERROR? Click the join channel button and try again \n\n{send_file.link}",
+                    reply_markup = reply_markup
                 )
              else:
                 if clicked == typed:
