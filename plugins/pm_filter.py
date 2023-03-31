@@ -1147,19 +1147,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             disable_web_page_preview=True,
             parse_mode=enums.ParseMode.HTML
         )
-
-     elif query.data == "bet":
-        buttons = [[
-            InlineKeyboardButton('SEARCH', callback_data='help')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await client.send_message(
-            text=script.HIN_TXT.format(query.from_user.mention),
-            chat_id=query.message.chat.id,
-            reply_markup=reply_markup,
-            disable_web_page_preview=True,
-            parse_mode=enums.ParseMode.HTML
-        )
      elif query.data == "eng":
         buttons = [[
             InlineKeyboardButton('SEARCH', callback_data='help')
