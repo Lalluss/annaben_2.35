@@ -1147,6 +1147,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             disable_web_page_preview=True,
             parse_mode=enums.ParseMode.HTML
         )
+
      elif query.data == "bet":
         buttons = [[
             InlineKeyboardButton('SEARCH', callback_data='help')
