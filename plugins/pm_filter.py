@@ -599,7 +599,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                             [[
                                 InlineKeyboardButton("Get File", url=joelkb_creatorbeatz.link)
                             ],[
-                                InlineKeyboardButton("💥JOIN CHANNEL💥", url='https://t.me/databut')
+                                InlineKeyboardButton("💥JOIN CHANNEL💥", url='https://t.me/LSBOTZ_UPDATE')
                             ]]
                         )
                     )
@@ -680,7 +680,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 ],
                 [
                     InlineKeyboardButton('Fɪʟᴇ Sᴇɴᴅ Mᴏᴅᴇ', callback_data=f'setgs#botpm#{settings["botpm"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('Mᴀɴᴜᴀʟ Sᴛᴀʀᴛ' if settings["botpm"] else 'Aᴜᴛᴏ Sᴇɴᴅ',
+                    InlineKeyboardButton('Mᴀɴᴜᴀʟ Sᴛᴀʀᴛ' if settings["botpm"] else 'ᴄʜᴀɴɴᴇʟ',
                                          callback_data=f'setgs#botpm#{settings["botpm"]}#{str(grp_id)}')
                 ],
                 [
