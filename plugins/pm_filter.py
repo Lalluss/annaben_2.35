@@ -594,8 +594,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                         )
                     )
                     joelkb_msg = await query.message.reply_text(
-                        text=f"<b>Hey {query.from_user.mention}, Your file is ready, Click on the 'Get File' button below to get your file.\nIf you can't access the file, click on the 'Join Channel' Button below and join before clicking on the 'Get File' button !</b>",
-                        parse_mode=enums.ParseMode.HTML,
+                        script.FILE_MSG.format(query.from_user.mention, title, size),                        parse_mode=enums.ParseMode.HTML,
                         reply_markup=InlineKeyboardMarkup(
                             [[
                                 InlineKeyboardButton("Get File", url=joelkb_creatorbeatz.link)
