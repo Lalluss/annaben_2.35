@@ -1147,7 +1147,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             disable_web_page_preview=True,
             parse_mode=enums.ParseMode.HTML
         )
-     elif query.data == "hin":
+     elif query.data == "bet":
         buttons = [[
             InlineKeyboardButton('SEARCH', callback_data='help')
         ]]
@@ -1348,7 +1348,7 @@ async def auto_filter(client, msg, spoll=False):
                     reply_markup = InlineKeyboardMarkup([[
                         InlineKeyboardButton("MAl", callback_data="mal"),
                         InlineKeyboardButton("TAM", callback_data="tam"),
-                        InlineKeyboardButton("HIN", callback_data="hin"),
+                        InlineKeyboardButton("HIN", callback_data="bet"),
                         InlineKeyboardButton("ENG", callback_data="eng")
                     ]])
                     imdb=await get_poster(search)
