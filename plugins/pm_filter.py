@@ -593,9 +593,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
                         text=script.FILE_MSG.format(query.from_user.mention, title, size),                        parse_mode=enums.ParseMode.HTML,
                         reply_markup=InlineKeyboardMarkup(
                             [[
-                                InlineKeyboardButton("Get File", url=joelkb_creatorbeatz.link)
+                                InlineKeyboardButton("📁ɢᴇᴛ ꜰɪʟᴇ📁", url=joelkb_creatorbeatz.link)
                             ],[
-                                InlineKeyboardButton("💥JOIN CHANNEL💥", url='https://t.me/LSBOTZ_UPDATE')
+                                InlineKeyboardButton("📥ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ📥", url='https://t.me/databut')
                             ]]
                         )
                     )
