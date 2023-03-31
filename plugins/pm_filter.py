@@ -1124,14 +1124,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "mal":
-        await query.message.delete()
         buttons = [[
             InlineKeyboardButton('SEARCH', url='https://www.google.com/search?q={}')
         ],[
             InlineKeyboardButton('Cʟᴏsᴇ', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.send_message(
+        await client.edit_text(
             text=script.MAL_TXT.format(query.from_user.mention),
             chat_id=query.message.chat.id,
             reply_markup=reply_markup,
