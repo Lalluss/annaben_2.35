@@ -43,18 +43,14 @@ SPELL_MODE = True
 
 SPELL_TXT = """➼ 𝑯𝒆𝒚 {mention}
 
-➼ 𝑪𝒐𝒖𝒍𝒅𝒏'𝒕 𝒇𝒊𝒏𝒅 𝒂𝒏𝒚 𝒓𝒆𝒔𝒖𝒍𝒕𝒔 𝒇𝒐𝒓 {query}, 𝑫𝒐 𝒚𝒐𝒖 𝒔𝒆𝒂𝒓𝒄𝒉𝒆𝒅 𝒇𝒐𝒓 𝒕𝒉𝒊𝒔 𝒎𝒐𝒗𝒊𝒆 ?
-
-➼ 𝑪𝒉𝒆𝒄𝒌 𝒔𝒑𝒆𝒍𝒍𝒊𝒏𝒈
- 
-➼ 𝑵𝒐𝒕 𝑶𝑻𝑻 𝒓𝒆𝒍𝒆𝒂𝒔𝒆𝒅
-
-
-      ｡◕MOVIE DETAILS◕｡
 ➣ Title: {title}
 ➣ Genre: {genres}
 ➣ Year: {year}
 ➣ Rating: {rating}
+
+🫣𝙲𝙷𝙴𝙺 𝚃𝙷𝙴 𝙸𝙽𝚂𝚃𝚁𝙲𝚃𝙸𝙾𝙽𝚂🫣
+
+ᴄʟɪᴄᴋ ᴜʀ ᴄᴜʀʀᴇɴᴛ ʟᴀɴɢᴜᴀɢᴇ ʙᴜᴛᴛᴏɴ ᴀɴᴅ ᴄʜᴇᴄᴋ ᴛʜᴇ ɪɴꜱᴛʀᴜᴄᴛɪᴏɴꜱ 😌
 """
 
 @Client.on_message(filters.group & filters.text & filters.incoming)
@@ -1126,7 +1122,52 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             disable_web_page_preview=True,
             parse_mode=enums.ParseMode.HTML
-        )    
+        )
+    elif query.data == "mal":
+        buttons = [[
+            InlineKeyboardButton('SEARCH', callback_data='help')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+            await message.reply_photo(photo=imdb.get('poster'),
+            text=script.MAL_TXT.format(query.from_user.mention),
+            chat_id=query.message.chat.id,
+            reply_markup=reply_markup,
+            disable_web_page_preview=True,
+            parse_mode=enums.ParseMode.HTML
+        )       
+    elif query.data == "tam":
+        buttons = [[
+            InlineKeyboardButton('SEARCH', callback_data='help')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+            text=script.TAM_TXT.format(query.from_user.mention),
+            chat_id=query.message.chat.id,
+            reply_markup=reply_markup,
+            disable_web_page_preview=True,
+            parse_mode=enums.ParseMode.HTML
+        )
+     elif query.data == "hin":
+        buttons = [[
+            InlineKeyboardButton('SEARCH', callback_data='help')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+            text=script.HIN_TXT.format(query.from_user.mention),
+            chat_id=query.message.chat.id,
+            reply_markup=reply_markup,
+            disable_web_page_preview=True,
+            parse_mode=enums.ParseMode.HTML
+        )
+     elif query.data == "eng":
+        buttons = [[
+            InlineKeyboardButton('SEARCH', callback_data='help')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+            text=script.ENG_TXT.format(query.from_user.mention),
+            chat_id=query.message.chat.id,
+            reply_markup=reply_markup,
+            disable_web_page_preview=True,
+            parse_mode=enums.ParseMode.HTML
+        )                     
     elif query.data == "admin":
         await query.message.delete()
         buttons = [[
@@ -1302,8 +1343,10 @@ async def auto_filter(client, msg, spoll=False):
                 if SPELL_MODE:  
                     reply = search.replace(" ", "+")
                     reply_markup = InlineKeyboardMarkup([[
-                        InlineKeyboardButton("🔮IMDB🔮", url=f"https://imdb.com/find?q={reply}"),
-                        InlineKeyboardButton("🪐 Reason", callback_data="reason")
+                        InlineKeyboardButton("MAl", callback_data="mal"),
+                        InlineKeyboardButton("TAM", callback_data="tam"),
+                        InlineKeyboardButton("HIN", callback_data="hin"),
+                        InlineKeyboardButton("ENG", callback_data="eng")
                     ]])
                     imdb=await get_poster(search)
                     if imdb and imdb.get('poster'):
