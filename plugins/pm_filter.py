@@ -48,7 +48,7 @@ SPELL_TXT = """➼ 𝑯𝒆𝒚 {mention}
 ➣ Year: {year}
 ➣ Rating: {rating}
 
-🫣𝙲𝙷𝙴𝙺 𝚃𝙷𝙴 𝙸𝙽𝚂𝚃𝚁𝙲𝚃𝙸𝙾𝙽𝚂🫣
+𝙲𝙷𝙴𝙲𝙺 𝚃𝙷𝙴 𝙸𝙽𝚂𝚃𝚁𝚄𝙲𝚃𝙸𝙾𝙽𝚂
 
 ᴄʟɪᴄᴋ ᴜʀ ᴄᴜʀʀᴇɴᴛ ʟᴀɴɢᴜᴀɢᴇ ʙᴜᴛᴛᴏɴ ᴀɴᴅ ᴄʜᴇᴄᴋ ᴛʜᴇ ɪɴꜱᴛʀᴜᴄᴛɪᴏɴꜱ 😌
 """
@@ -1126,7 +1126,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "mal":
         await query.message.delete()
         buttons = [[
-            InlineKeyboardButton('SEARCH', url='https://www.google.com/search?q={reply}')
+            InlineKeyboardButton('SEARCH', url='https://www.google.com/search?q={}')
         ],[
             InlineKeyboardButton('Cʟᴏsᴇ', callback_data='close_data')
         ]]
@@ -1141,7 +1141,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "eng":
         await query.message.delete()
         buttons = [[
-            InlineKeyboardButton('SEARCH', url='https://www.google.com/search?q={reply}')
+            InlineKeyboardButton('SEARCH', url='https://www.google.com/search?q={}')
         ],[
             InlineKeyboardButton('Cʟᴏsᴇ', callback_data='close_data')
         ]]
@@ -1156,7 +1156,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "bet":
         await query.message.delete()
         buttons = [[
-            InlineKeyboardButton('SEARCH', url='https://www.google.com/search?q={reply}')
+            InlineKeyboardButton('SEARCH', url='https://www.google.com/search?q={}')
         ],[
             InlineKeyboardButton('Cʟᴏsᴇ', callback_data='close_data')
         ]]
@@ -1171,7 +1171,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "tam":
         await query.message.delete()
         buttons = [[
-            InlineKeyboardButton('SEARCH', url='https://www.google.com/search?q={reply}')
+            InlineKeyboardButton('SEARCH', url='https://www.google.com/search?q={}')
         ],[
             InlineKeyboardButton('Cʟᴏsᴇ', callback_data='close_data')
         ]]
@@ -1358,10 +1358,12 @@ async def auto_filter(client, msg, spoll=False):
                 if SPELL_MODE:  
                     reply = search.replace(" ", "+")
                     reply_markup = InlineKeyboardMarkup([[
-                        InlineKeyboardButton("MAl", callback_data="mal"),
-                        InlineKeyboardButton("TAM", callback_data="tam"),
-                        InlineKeyboardButton("HIN", callback_data="bet"),
-                        InlineKeyboardButton("ENG", callback_data="eng")
+                        InlineKeyboardButton("📁𝙸𝙽𝚂𝚃𝚁𝚄𝙲𝚃𝙸𝙾𝙽𝚂📁", callback_data="instr")
+                    ],[
+                        InlineKeyboardButton("ᴍᴀʟ", callback_data="mal"),
+                        InlineKeyboardButton("ᴛᴀᴍ", callback_data="tam"),
+                        InlineKeyboardButton("ʜɪɴ", callback_data="bet"),
+                        InlineKeyboardButton("ᴇɴɢ", callback_data="eng")
                     ]])
                     imdb=await get_poster(search)
                     if imdb and imdb.get('poster'):
