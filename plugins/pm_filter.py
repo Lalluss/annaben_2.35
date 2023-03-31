@@ -1136,7 +1136,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "eng":
-        await query.message.delete()
         buttons = [[
             InlineKeyboardButton('SEARCH', url='https://www.google.com/search?q={}')
         ],[
@@ -1149,7 +1148,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "bet":
-        await query.message.delete()
         buttons = [[
             InlineKeyboardButton('SEARCH', url='https://www.google.com/search?q={}')
         ],[
@@ -1162,7 +1160,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "tam":
-        await query.message.delete()
         buttons = [[
             InlineKeyboardButton('SEARCH', url='https://www.google.com/search?q={}')
         ],[
