@@ -1126,7 +1126,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "mal":
         await query.message.delete()
         buttons = [[
-            InlineKeyboardButton('SEARCH', callback_data='help')
+            InlineKeyboardButton('SEARCH', url='https://www.google.com/search?q={reply}')
         ],[
             InlineKeyboardButton('Cʟᴏsᴇ', callback_data='close_data')
         ]]
@@ -1141,7 +1141,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "eng":
         await query.message.delete()
         buttons = [[
-            InlineKeyboardButton('SEARCH', callback_data='help')
+            InlineKeyboardButton('SEARCH', url='https://www.google.com/search?q={reply}')
         ],[
             InlineKeyboardButton('Cʟᴏsᴇ', callback_data='close_data')
         ]]
@@ -1156,7 +1156,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "bet":
         await query.message.delete()
         buttons = [[
-            InlineKeyboardButton('SEARCH', callback_data='help')
+            InlineKeyboardButton('SEARCH', url='https://www.google.com/search?q={reply}')
         ],[
             InlineKeyboardButton('Cʟᴏsᴇ', callback_data='close_data')
         ]]
@@ -1171,7 +1171,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "tam":
         await query.message.delete()
         buttons = [[
-            InlineKeyboardButton('SEARCH', callback_data='help')
+            InlineKeyboardButton('SEARCH', url='https://www.google.com/search?q={reply}')
         ],[
             InlineKeyboardButton('Cʟᴏsᴇ', callback_data='close_data')
         ]]
