@@ -1127,6 +1127,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.message.delete()
         buttons = [[
             InlineKeyboardButton('SEARCH', callback_data='help')
+        ],[
+            InlineKeyboardButton('Cʟᴏsᴇ', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.send_message(
@@ -1140,6 +1142,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.message.delete()
         buttons = [[
             InlineKeyboardButton('SEARCH', callback_data='help')
+        ],[
+            InlineKeyboardButton('Cʟᴏsᴇ', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.send_message(
@@ -1153,6 +1157,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.message.delete()
         buttons = [[
             InlineKeyboardButton('SEARCH', callback_data='help')
+        ],[
+            InlineKeyboardButton('Cʟᴏsᴇ', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.send_message(
@@ -1166,6 +1172,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.message.delete()
         buttons = [[
             InlineKeyboardButton('SEARCH', callback_data='help')
+        ],[
+            InlineKeyboardButton('Cʟᴏsᴇ', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.send_message(
