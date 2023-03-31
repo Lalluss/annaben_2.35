@@ -1143,11 +1143,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('Cʟᴏsᴇ', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.send_message(
-            text=script.ENG_TXT.format(query.from_user.mention),
-            chat_id=query.message.chat.id,
+        await query.message.edit_text(
+            text=script.ENG_TXT.format(temp.B_NAME),
             reply_markup=reply_markup,
-            disable_web_page_preview=True,
             parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "bet":
@@ -1158,11 +1156,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('Cʟᴏsᴇ', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.send_message(
-            text=script.HIN_TXT.format(query.from_user.mention),
-            chat_id=query.message.chat.id,
+        await query.message.edit_text(
+            text=script.HIN_TXT.format(temp.B_NAME),
             reply_markup=reply_markup,
-            disable_web_page_preview=True,
             parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "tam":
@@ -1173,11 +1169,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('Cʟᴏsᴇ', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.send_message(
-            text=script.TAM_TXT.format(query.from_user.mention),
-            chat_id=query.message.chat.id,
+        await query.message.edit_text(
+            text=script.TAM_TXT.format(temp.B_NAME),
             reply_markup=reply_markup,
-            disable_web_page_preview=True,
             parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "admin":
