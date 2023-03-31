@@ -1128,7 +1128,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('SEARCH', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-            await message.reply_photo(photo=imdb.get('poster'),
             text=script.MAL_TXT.format(query.from_user.mention),
             chat_id=query.message.chat.id,
             reply_markup=reply_markup,
