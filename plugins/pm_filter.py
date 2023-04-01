@@ -1355,9 +1355,10 @@ async def auto_filter(client, msg, spoll=False):
                     ],[
                         InlineKeyboardButton("🔮ɪᴍᴅ🔮", url=f"https://imdb.com/find?q={reply}")
                     ]])
-                      await message.reply_message
+                      await message.reply_text(
                       caption=SPELL_TXT.format(mention=message.from_user.mention, query=search, title=imdb.get('title'), genres=imdb.get('genres'), year=imdb.get('year'), rating=imdb.get('rating'), short=imdb.get('short_info'), url=imdb['url']), reply_markup=reply_markup)
-                      return
+                     )
+                     return
 
                     else:
                         return
