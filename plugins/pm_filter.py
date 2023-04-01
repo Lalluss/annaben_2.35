@@ -52,6 +52,8 @@ SPELL_TXT = """➼ 𝑯𝒆𝒚 {mention}
 
 ᴄʟɪᴄᴋ ᴜʀ ᴄᴜʀʀᴇɴᴛ ʟᴀɴɢᴜᴀɢᴇ ʙᴜᴛᴛᴏɴ ᴀɴᴅ ᴄʜᴇᴄᴋ ᴛʜᴇ ɪɴꜱᴛʀᴜᴄᴛɪᴏɴꜱ 😌
 """
+GTFL_TXT = """ HELLO
+CLICK DOWNLOAD BUTTON """
 
 @Client.on_message(filters.group & filters.text & filters.incoming)
 async def give_filter(client, message):
@@ -1125,11 +1127,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "gtfl":
         buttons = [[
-            InlineKeyboardButton('DOWNLOAD', url=await get_shortlink(query.message.chat.id, f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}")
+            InlineKeyboardButton('DOWNLOAD', url=await get_shortlink(query.message.chat.id, f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}"))
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=script.MAL_TXT.format(temp.B_NAME),
+            text=GTFL_TXT.format(temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
