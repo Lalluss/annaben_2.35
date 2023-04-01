@@ -381,6 +381,33 @@ async def channel_info(bot, message):
         await message.reply_document(file)
         os.remove(file)
 
+@Client.on_message(filters.command('logs') & filters.user(ADMINS))
+async def log_file(bot, message):
+    try:
+        with open("TelegramBot.log", "r") as f:
+            logs = f.read()
+        # Upload logs to hastebin
+        r = req.post("https://hastebin.com/documents", data=logs.encode("utf-8"))
+        paste_url = ""
+        if r.status_code == 200:
+            try:
+                response = json.loads(r.text)
+                paste_url = f"https://hastebin.com/{response['key']}"
+                button = InlineKeyboardButton(text="View logs", url=paste_url)
+                reply_markup = InlineKeyboardMarkup([[button]])
+                # Send message with link to paste
+                await message.reply_photo(
+                    photo=paste_url,
+                    caption="Here is a link to the logs:",
+                    reply_markup=reply_markup
+                )
+            except ValueError:
+                await message.reply("The response is not in valid JSON format.")
+        else:
+            await message.reply(f"The request returned an error: {r.status_code}")
+            
+    except Exception as e:
+        await message.reply(str(e))
 
 @Client.on_message(filters.command('logs') & filters.user(ADMINS))
 async def log_file(bot, message):
