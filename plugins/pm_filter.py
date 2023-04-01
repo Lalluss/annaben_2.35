@@ -116,7 +116,7 @@ async def next_page(bot, query):
             btn = [
                 [
                     InlineKeyboardButton(
-                        text=f"[{get_size(file.file_size)}] {file.file_name}", url="https://telegram.me/{temp.U_NAME}?start=await get_shortlink"(query.message.chat.id, f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}")
+                        text=f"[{get_size(file.file_size)}] {file.file_name}", url=("https://telegram.me/{temp.U_NAME}?start=(callback_data=gtfl)"),await get_shortlink(query.message.chat.id, f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}")
                     ),
                 ]
                 for file in files
@@ -125,11 +125,11 @@ async def next_page(bot, query):
             btn = [
                 [
                     InlineKeyboardButton(
-                        text=f"{file.file_name}", url=await get_shortlink(query.message.chat.id, f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}")
+                        text=f"{file.file_name}", url=("https://telegram.me/{temp.U_NAME}?start=(callback_data=gtfl)"),await get_shortlink(query.message.chat.id, f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}")
                     ),
                     InlineKeyboardButton(
                         text=f"{get_size(file.file_size)}",
-                        url=await get_shortlink(query.message.chat.id, f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}")
+                        url=("https://telegram.me/{temp.U_NAME}?start=(callback_data=gtfl)"),await get_shortlink(query.message.chat.id, f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}")
                     ),
                 ]
                 for file in files
@@ -1121,6 +1121,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
             chat_id=query.message.chat.id,
             reply_markup=reply_markup,
             disable_web_page_preview=True,
+            parse_mode=enums.ParseMode.HTML
+        )
+    elif query.data == "gtfl":
+        buttons = [[
+            InlineKeyboardButton('DOWNLOAD', url=await get_shortlink(query.message.chat.id, f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}")
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.MAL_TXT.format(temp.B_NAME),
+            reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "mal":
