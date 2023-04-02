@@ -1135,6 +1135,36 @@ async def cb_handler(client: Client, query: CallbackQuery):
             disable_web_page_preview=True,
             parse_mode=enums.ParseMode.HTML
         )
+    elif query.data == "thank":
+        await query.message.delete()
+        buttons = [[
+            InlineKeyboardButton('𝙰𝙳𝙳 𝙼𝙴', url=f'https://t.me/{temp.U_NAME}?startgroup=true'),
+        ],[
+            InlineKeyboardButton('𝚂𝚃𝙰𝚁𝚃 𝙼𝚂𝙶', callback_data='astart'),
+            InlineKeyboardButton('𝚌𝚕𝚘𝚜𝚎', callback_data='close_data')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await client.send_message(
+            text=script.THANK_TXT.format(query.from_user.mention),
+            chat_id=query.message.chat.id,
+            reply_markup=reply_markup,
+            disable_web_page_preview=True,
+            parse_mode=enums.ParseMode.HTML
+        )
+    elif query.data == "astart":
+        await query.message.delete()
+        buttons = [[
+            InlineKeyboardButton('𝚂𝚃𝙰𝚁𝚃', url=f'https://t.me/{temp.U_NAME}?start=true'),
+            InlineKeyboardButton('𝙲𝙻𝙾𝚂𝙴', callback_data='close_data')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await client.send_message(
+            text=script.THANK_TXT.format(query.from_user.mention),
+            chat_id=query.message.chat.id,
+            reply_markup=reply_markup,
+            disable_web_page_preview=True,
+            parse_mode=enums.ParseMode.HTML
+        )
     elif query.data == "source":
         await query.message.delete()
         buttons = [[
