@@ -944,28 +944,129 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer(text=script.SINFO, show_alert=True)
 
     elif query.data == "start":
-        await query.message.delete()
         buttons = [[
-                    InlineKeyboardButton('ᴀᴅᴅ ᴍᴇ ᴛᴏ ᴜʀ ɢʀᴩ', url=f'https://t.me/{temp.U_NAME}?startgroup=true')
+                    InlineKeyboardButton('🔮𝚂𝙴𝙻𝙴𝙲𝚃 𝚄𝚁 𝙻𝙰𝙽𝙶🔮', callbac_data='lang')
                 ],[
-                    InlineKeyboardButton('ᴍy ᴅᴇᴠ', url=f'http://t.me/Lallu_tgs'),
-                    InlineKeyboardButton('ᴍy ɢʀᴩ', url=f'https://t.me/EDIT_REPO')
+                    InlineKeyboardButton('𝙼𝙰𝙻', callback_data='smal'),
+                    InlineKeyboardButton('𝙷𝙸𝙽', callback_data='shin')
+                    InlineKeyboardButton('𝚃𝙰𝙼', callback_data='stam'),
+                    InlineKeyboardButton('𝙴𝙽𝙶', callback_data='seng')
                 ],[
-                    InlineKeyboardButton('ʜᴇʟᴩ', callback_data='help'),
-                    InlineKeyboardButton('ᴀʙᴏᴜᴛ', callback_data='about'),
-                    InlineKeyboardButton('ꜱᴇᴀʀᴄʜ', switch_inline_query_current_chat='')
-                ],[
-                    InlineKeyboardButton('ᴜᴩᴅᴀᴛᴇꜱ', url=f'https://t.me/LSBOTZ_UPDATE')
+                    InlineKeyboardButton('☺️ 𝚃𝙷𝙰𝙽𝙺 𝚄 ☺️', callback_data='thank')
                   ]]
-        
+      
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.send_sticker(
-            sticker="CAACAgUAAxkBAAEIWoNkIwh1HrX8EEaXqkgGZXKX1gOymgACQAgAAp6lGVVUeWhnuKcXIy8E",
-            chat_id=query.message.chat.id,
-            reply_markup=reply_markup
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto(random.choice(PICS))
+        )
+        await query.message.edit_text(
+            text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
         )
         await query.answer(MSG_ALRT)
 
+    elif query.data == "smal":
+        buttons = [[
+            InlineKeyboardButton('𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚄𝚁 𝙶𝚁𝙿', url=f'https://t.me/{temp.U_NAME}?startgroup=true')
+        ],[
+            InlineKeyboardButton('𝙼𝚈 𝙳𝙴𝚅', url=f'http://t.me/Lallu_tgs'),
+            InlineKeyboardButton('𝙼𝚈 𝙶𝚁𝙾𝚄𝙿', url=f'https://t.me/EDIT_REPO')
+        ],[
+            InlineKeyboardButton('𝙲𝙷𝙴𝙲𝙺', callback_data='help'),
+            InlineKeyboardButton('𝙳𝙰𝚃𝙰𝚂', callback_data='about'),
+            InlineKeyboardButton('𝙸𝙽𝙻𝙸𝙽𝙴', switch_inline_query_current_chat='')
+        ],[
+            InlineKeyboardButton('𝙱𝙰𝙲𝙺', callback_data='thank')
+        ]]
+
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto(random.choice(PICS))
+        )
+        await query.message.edit_text(
+            text=script.SMAL_TXT.format(query.from_user.mention),
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
+    elif query.data == "shin":
+        buttons = [[
+            InlineKeyboardButton('𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚄𝚁 𝙶𝚁𝙿', url=f'https://t.me/{temp.U_NAME}?startgroup=true')
+        ],[
+            InlineKeyboardButton('𝙼𝚈 𝙳𝙴𝚅', url=f'http://t.me/Lallu_tgs'),
+            InlineKeyboardButton('𝙼𝚈 𝙶𝚁𝙾𝚄𝙿', url=f'https://t.me/EDIT_REPO')
+        ],[
+            InlineKeyboardButton('𝙲𝙷𝙴𝙲𝙺', callback_data='help'),
+            InlineKeyboardButton('𝙳𝙰𝚃𝙰𝚂', callback_data='about'),
+            InlineKeyboardButton('𝙸𝙽𝙻𝙸𝙽𝙴', switch_inline_query_current_chat='')
+        ],[
+            InlineKeyboardButton('𝙱𝙰𝙲𝙺', callback_data='thank')
+        ]]
+
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto(random.choice(PICS))
+        )
+        await query.message.edit_text(
+            text=script.SHIN_TXT.format(query.from_user.mention),
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
+    elif query.data == "seng":
+        buttons = [[
+            InlineKeyboardButton('𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚄𝚁 𝙶𝚁𝙿', url=f'https://t.me/{temp.U_NAME}?startgroup=true')
+        ],[
+            InlineKeyboardButton('𝙼𝚈 𝙳𝙴𝚅', url=f'http://t.me/Lallu_tgs'),
+            InlineKeyboardButton('𝙼𝚈 𝙶𝚁𝙾𝚄𝙿', url=f'https://t.me/EDIT_REPO')
+        ],[
+            InlineKeyboardButton('𝙲𝙷𝙴𝙲𝙺', callback_data='help'),
+            InlineKeyboardButton('𝙳𝙰𝚃𝙰𝚂', callback_data='about'),
+            InlineKeyboardButton('𝙸𝙽𝙻𝙸𝙽𝙴', switch_inline_query_current_chat='')
+        ],[
+            InlineKeyboardButton('𝙱𝙰𝙲𝙺', callback_data='thank')
+        ]]
+
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto(random.choice(PICS))
+        )
+        await query.message.edit_text(
+            text=script.SENG_TXT.format(query.from_user.mention),
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
+    elif query.data == "stam":
+        buttons = [[
+            InlineKeyboardButton('𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚄𝚁 𝙶𝚁𝙿', url=f'https://t.me/{temp.U_NAME}?startgroup=true')
+        ],[
+            InlineKeyboardButton('𝙼𝚈 𝙳𝙴𝚅', url=f'http://t.me/Lallu_tgs'),
+            InlineKeyboardButton('𝙼𝚈 𝙶𝚁𝙾𝚄𝙿', url=f'https://t.me/EDIT_REPO')
+        ],[
+            InlineKeyboardButton('𝙲𝙷𝙴𝙲𝙺', callback_data='help'),
+            InlineKeyboardButton('𝙳𝙰𝚃𝙰𝚂', callback_data='about'),
+            InlineKeyboardButton('𝙸𝙽𝙻𝙸𝙽𝙴', switch_inline_query_current_chat='')
+        ],[
+            InlineKeyboardButton('𝙱𝙰𝙲𝙺', callback_data='thank')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto(random.choice(PICS))
+        )
+        await query.message.edit_text(
+            text=script.STAM_TXT.format(query.from_user.mention),
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
     elif query.data == "filters":
         await query.message.delete()
         buttons = [[
@@ -974,7 +1075,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ],[
             InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='help'),
             InlineKeyboardButton('Gʟᴏʙᴀʟ Fɪʟᴛᴇʀs', callback_data='global_filters')
-        ]]        
+        ]]  
+     
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.send_message(
             text=script.ALL_FILTERS.format(query.from_user.mention),
@@ -988,6 +1090,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='filters')
         ]]
+
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.send_message(
             text=script.GFILTER_TXT.format(query.from_user.mention),
