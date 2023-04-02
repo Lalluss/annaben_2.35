@@ -1098,10 +1098,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.send_sticker(
-            sticker="CAACAgUAAxkBAAEIWuVkIxY8P5O2eiI6j2_lLfieir_nEwACmAgAAihQIFXxQ9xVTOLp2y8E",
-            chat_id=query.message.chat.id,
-            reply_markup=reply_markup
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto(random.choice(PICS))
+        )
+        await query.message.edit_text(
+            text=script.HELP_TXT.format(query.from_user.mention),
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "about":
         await query.message.delete()
