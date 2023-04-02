@@ -944,6 +944,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer(text=script.SINFO, show_alert=True)
 
     elif query.data == "start":
+        await query.message.delete()
         buttons = [[
                     InlineKeyboardButton('🔮𝚂𝙴𝙻𝙴𝙲𝚃 𝚄𝚁 𝙻𝙰𝙽𝙶🔮', callback_data='lang')
                 ],[
