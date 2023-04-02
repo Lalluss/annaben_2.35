@@ -1348,6 +1348,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('⟲ Rᴇғʀᴇsʜ', callback_data='rfrsh')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto(random.choice(PICS))
+        )
         total = await Media.count_documents()
         users = await db.total_users_count()
         chats = await db.total_chat_count()
@@ -1355,11 +1360,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
         free = 536870912 - monsize
         monsize = get_size(monsize)
         free = get_size(free)
-        await client.send_message(
-            text=script.STATUS_TXT.format(query.from_user.mention),
-            chat_id=query.message.chat.id,
+        await query.message.edit_text(
+            text=script.STATUS_TXT.format(total, users, chats, monsize, free),
             reply_markup=reply_markup,
-            disable_web_page_preview=True,
             parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "rfrsh":
