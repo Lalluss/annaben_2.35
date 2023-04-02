@@ -1136,6 +1136,28 @@ async def cb_handler(client: Client, query: CallbackQuery):
             disable_web_page_preview=True,
             parse_mode=enums.ParseMode.HTML
         )
+    elif query.data == "lang":
+        await query.message.delete()
+        buttons = [[
+                    InlineKeyboardButton('🔮𝚂𝙴𝙻𝙴𝙲𝚃 𝚄𝚁 𝙻𝙰𝙽𝙶🔮', callback_data='lang')
+                ],[
+                    InlineKeyboardButton('𝙼𝙰𝙻', callback_data='smal'),
+                    InlineKeyboardButton('𝙷𝙸𝙽', callback_data='shin'),
+                    InlineKeyboardButton('𝚃𝙰𝙼', callback_data='stam'),
+                    InlineKeyboardButton('𝙴𝙽𝙶', callback_data='seng')
+                ],[
+                    InlineKeyboardButton('☺️ 𝚃𝙷𝙰𝙽𝙺 𝚄 ☺️', callback_data='thank')
+                  ]]
+      
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await client.send_photo(
+            photo=random.choice(pics),
+            text=script.START_TXT.format(query.from_user.mention),
+            chat_id=query.message.chat.id,
+            reply_markup=reply_markup,
+            disable_web_page_preview=True,
+            parse_mode=enums.ParseMode.HTML
+        )
     elif query.data == "thank":
         await query.message.delete()
         buttons = [[
