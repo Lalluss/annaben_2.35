@@ -1150,8 +1150,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                   ]]
       
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.send_photo(
-            photo=random.choice(pics),
+        await client.send_message(
             text=script.START_TXT.format(query.from_user.mention),
             chat_id=query.message.chat.id,
             reply_markup=reply_markup,
