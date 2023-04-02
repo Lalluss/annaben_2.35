@@ -1154,12 +1154,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "astart":
         await query.message.delete()
         buttons = [[
-            InlineKeyboardButton('𝚂𝚃𝙰𝚁𝚃', callback_data='start'),
+            InlineKeyboardButton('𝚂𝚃𝙰𝚁𝚃', url=f'https://t.me/{temp.U_NAME}?start=true'),
             InlineKeyboardButton('𝙲𝙻𝙾𝚂𝙴', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.send_message(
-            text=script.THANK_TXT.format(query.from_user.mention),
+            text=script.ASTART_TXT.format(query.from_user.mention),
             chat_id=query.message.chat.id,
             reply_markup=reply_markup,
             disable_web_page_preview=True,
