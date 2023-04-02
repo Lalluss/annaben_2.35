@@ -988,7 +988,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             text=script.SMAL_TXT.format(query.from_user.mention),
             disable_web_page_preview=True,
             reply_markup=reply_markup,
-            parse_mode='html'
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "shin":
         buttons = [[
@@ -1009,7 +1009,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             text=script.SHIN_TXT.format(query.from_user.mention),
             disable_web_page_preview=True,
             reply_markup=reply_markup,
-            parse_mode='html'
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "seng":
         buttons = [[
@@ -1030,7 +1030,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             text=script.SENG_TXT.format(query.from_user.mention),
             disable_web_page_preview=True,
             reply_markup=reply_markup,
-            parse_mode='html'
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "stam":
         buttons = [[
@@ -1050,7 +1050,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             text=script.STAM_TXT.format(query.from_user.mention),
             disable_web_page_preview=True,
             reply_markup=reply_markup,
-            parse_mode='html'
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "filters":
         await query.message.delete()
