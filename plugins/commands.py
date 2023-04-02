@@ -54,16 +54,14 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
         buttons = [[
-                    InlineKeyboardButton('𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚄𝚁 𝙶𝚁𝙿', url=f'https://t.me/{temp.U_NAME}?startgroup=true')
+                    InlineKeyboardButton('🔮𝚂𝙴𝙻𝙴𝙲𝚃 𝚄𝚁 𝙻𝙰𝙽𝙶🔮', callbac_data='lang')
                 ],[
-                    InlineKeyboardButton('𝙼𝚈 𝙳𝙴𝚅', url=f'http://t.me/Lallu_tgs'),
-                    InlineKeyboardButton('𝙼𝚈 𝙶𝚁𝙾𝚄𝙿', url=f'https://t.me/EDIT_REPO')
+                    InlineKeyboardButton('𝙼𝙰𝙻', callback_data='smal'),
+                    InlineKeyboardButton('𝙷𝙸𝙽', callback_data='shin'),
+                    InlineKeyboardButton('𝚃𝙰𝙼', callback_data='stam'),
+                    InlineKeyboardButton('𝙴𝙽𝙶', callback_data='seng')
                 ],[
-                    InlineKeyboardButton('𝙲𝙷𝙴𝙲𝙺', callback_data='help'),
-                    InlineKeyboardButton('𝙳𝙰𝚃𝙰𝚂', callback_data='about'),
-                    InlineKeyboardButton('𝙸𝙽𝙻𝙸𝙽𝙴', switch_inline_query_current_chat='')
-                ],[
-                    InlineKeyboardButton('𝙱𝙰𝙲𝙺', callback_data='thank')
+                    InlineKeyboardButton('☺️ 𝚃𝙷𝙰𝙽𝙺 𝚄 ☺️', callback_data='thank')
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
