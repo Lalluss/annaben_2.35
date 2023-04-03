@@ -56,7 +56,7 @@ async def save_group(bot, message):
                         await (temp.MELCOW['welcome']).delete()
                     except:
                         pass
-                temp.MELCOW['welcome'] = await send_sticker(
+                temp.MELCOW['welcome'] = await query.send_sticker(
                                                  sticker="CAACAgIAAxkBAAEIbuxkKn7z2uYk-h6KJP4dOO6bfCVUpwAChxUAAj0PUEnem2b91sejvy8E",
                                                  #caption=(script.MELCOW_ENG.format(u.mention, message.chat.title)),
                                                  reply_markup=InlineKeyboardMarkup(
