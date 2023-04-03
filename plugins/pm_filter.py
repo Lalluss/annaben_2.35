@@ -1506,7 +1506,7 @@ async def auto_filter(client, msg, spoll=False):
                     ],[
                         InlineKeyboardButton("🔮ɪᴍᴅ🔮", url=f"https://imdb.com/find?q={reply}")
                     ]])
-                       await query.message.reply_text(
+                       await query.message.send_text(
                              text=script.SPELL_TXT.format(query.from_user.mention),
                              disable_web_page_preview=True,
                              reply_markup=reply_markup,
