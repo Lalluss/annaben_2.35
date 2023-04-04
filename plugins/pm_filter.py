@@ -42,6 +42,7 @@ SPELL_CHECK = {}
 SPELL_MODE = True
 
 SPELL_TXT = """➼ 𝑯𝒆𝒚 {mention}
+
 ➣ Title: {title}
 ➣ Genre: {genres}
 ➣ Year: {year}
