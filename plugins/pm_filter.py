@@ -378,7 +378,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
     files, _, _ = await get_search_results(chat_id, search, max_results=10)
     files = [file for file in files if re.search(lang, file.file_name, re.IGNORECASE)]
     if not files:
-        await query.answer("🚫 𝗡𝗼 𝗙𝗶𝗹𝗲 𝗪𝗲𝗿𝗲 𝗙𝗼𝘂𝗻𝗱 🚫", show_alert=1)
+        await query.answer("🚫𝙽𝙾 𝙵𝙸𝙻𝙴 𝚆𝙴𝚁𝙴 𝙵𝙾𝚄𝙽🚫", show_alert=1)
         return
 
     settings = await get_settings(message.chat.id)
@@ -451,9 +451,9 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
             btn.insert(
                 0,
                 [
-                    InlineKeyboardButton(f'♻️ ɪɴꜰᴏ', 'info'),
-                    InlineKeyboardButton("ꜰᴏʀᴍᴀᴛ​", 'format'),
-                    InlineKeyboardButton(f'ᴛɪᴘs​ ⚜', 'tips'),
+                    InlineKeyboardButton(f'♻️ ɪɴꜰᴏ', 'minfo'),
+                    InlineKeyboardButton("ꜰᴏʀᴍᴀᴛ​", 'reqinfo'),
+                    InlineKeyboardButton(f'ᴛɪᴘs​ ⚜', 'sinfo'),
                 ],
             )
 
@@ -461,9 +461,9 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
             btn.insert(
                 0,
                 [
-                    InlineKeyboardButton(f'♻️ ɪɴꜰᴏ', 'info'),
-                    InlineKeyboardButton("ꜰᴏʀᴍᴀᴛ​", 'format'),
-                    InlineKeyboardButton(f'ᴛɪᴘs​ ⚜', 'tips'),
+                    InlineKeyboardButton(f'♻️ ɪɴꜰᴏ', 'minfi'),
+                    InlineKeyboardButton("ꜰᴏʀᴍᴀᴛ​", 'reqinfo'),
+                    InlineKeyboardButton(f'ᴛɪᴘs​ ⚜', 'sinfo'),
                 ],
             )
 
@@ -475,9 +475,9 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
             btn.insert(
                 0,
                 [
-                    InlineKeyboardButton(f'♻️ ɪɴꜰᴏ', 'info'),
-                    InlineKeyboardButton("ꜰᴏʀᴍᴀᴛ​", 'format'),
-                    InlineKeyboardButton(f'ᴛɪᴘs​ ⚜', 'tips'),
+                    InlineKeyboardButton(f'♻️ ɪɴꜰᴏ', 'minfo'),
+                    InlineKeyboardButton("ꜰᴏʀᴍᴀᴛ​", 'reqinfo'),
+                    InlineKeyboardButton(f'ᴛɪᴘs​ ⚜', 'sinfo'),
                 ],
             )
 
@@ -485,14 +485,14 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
             btn.insert(
                 0,
                 [
-                    InlineKeyboardButton(f'♻️ ɪɴꜰᴏ', 'info'),
-                    InlineKeyboardButton("ꜰᴏʀᴍᴀᴛ​", 'format'),
-                    InlineKeyboardButton(f'ᴛɪᴘs​ ⚜', 'tips'),
+                    InlineKeyboardButton(f'♻️ ɪɴꜰᴏ', 'minfo'),
+                    InlineKeyboardButton("ꜰᴏʀᴍᴀᴛ​", 'reqinfo'),
+                    InlineKeyboardButton(f'ᴛɪᴘs​ ⚜', 'sinfo'),
                 ],
             )
 
     btn.insert(0, [
-        InlineKeyboardButton("💢 𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐆𝐫𝐨𝐮𝐩𝐬 💢", url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+        InlineKeyboardButton("𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚄𝚁 𝙶𝚁𝙿", url=f'http://t.me/{temp.U_NAME}?startgroup=true')
     ])
     offset = 0
 
