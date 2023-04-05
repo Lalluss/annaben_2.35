@@ -1804,7 +1804,7 @@ async def auto_filter(client, msg, spoll=False):
             )
 
     btn.insert(0, [
-        InlineKeyboardButton("Languages", callback_data=f"languages#{search.replace(' ', '_')}#{key}#{message.chat.id}-{message.id}#{0}")
+        InlineKeyboardButton("Languages", callback_data=f"languages#{search.replace(' ', '_')}#{pre}#{message.chat.id}-{message.id}#{0}")
     ])
     btn.insert(0, [
         InlineKeyboardButton("⚡ Cʜᴇᴄᴋ Bᴏᴛ PM ⚡", url=f"https://t.me/{temp.U_NAME}")
