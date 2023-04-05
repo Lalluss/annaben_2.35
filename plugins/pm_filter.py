@@ -286,7 +286,13 @@ async def next_page(bot, query):
                     ],
                 )
     btn.insert(0, [
+        InlineKeyboardButton("Send All !", callback_data=f"send_fall#files#{key}#{offset}")
+    ])
+    btn.insert(0, [
         InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs​", callback_data=f"languages#{search.replace(' ', '_')}#{key}")
+    ])
+    btn.insert(0, [
+        InlineKeyboardButton("⚡ Cʜᴇᴄᴋ Bᴏᴛ PM ⚡", url=f"https://t.me/{temp.U_NAME}")
     ])
     try:
         await query.edit_message_reply_markup(
@@ -841,6 +847,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "pages":
         await query.answer()
+
+    elif query.data.startswith("send_fall"):
+        temp, ident, key, offset = query.data.split("#")
+        search = BUTTONS.get(key)
+        if not search:
+            await query.answer(script.OLD_ALRT_TXT.format(query.from_user.first_name),show_alert=True)
+            return
+        files, n_offset, total = await get_search_results(query.message.chat.id, search, offset=int(offset), filter=True)
+        await send_all(client, query.from_user.id, files, ident)
+        await query.answer(f"Hey {query.from_user.first_name}, All files on this page has been sent successfully to your PM !", show_alert=True)
 
     elif query.data.startswith("opnsetgrp"):
         ident, grp_id = query.data.split("#")
@@ -1803,6 +1819,9 @@ async def auto_filter(client, msg, spoll=False):
                 ]
             )
 
+    btn.insert(0, [
+        InlineKeyboardButton("Send All !", callback_data=f"send_fall#{pre}#{message.chat.id}-{message.id}#{0}")
+    ])
     btn.insert(0, [
         InlineKeyboardButton("Languages", callback_data=f"languages#{search.replace(' ', '_')}#{pre}#{message.chat.id}-{message.id}#{0}")
     ])
