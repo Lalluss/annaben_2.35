@@ -498,6 +498,9 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
             )
 
     btn.insert(0, [
+        InlineKeyboardButton("Send All !", callback_data=f"send_fall#{pre}#{message.chat.id}-{message.id}#{0}")
+    ])
+    btn.insert(0, [
         InlineKeyboardButton("𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚄𝚁 𝙶𝚁𝙿", url=f'http://t.me/{temp.U_NAME}?startgroup=true')
     ])
     offset = 0
@@ -1828,7 +1831,7 @@ async def auto_filter(client, msg, spoll=False):
         InlineKeyboardButton("Send All !", callback_data=f"send_fall#{pre}#{message.chat.id}-{message.id}#{0}")
     ])
     btn.insert(0, [
-        InlineKeyboardButton("Languages", callback_data=f"languages#{search.replace(' ', '_')}#{pre}#{message.chat.id}-{message.id}#{0}")
+        InlineKeyboardButton("Languages", callback_data=f"languages#{search.replace(' ', '_')}#{key}")
     ])
     btn.insert(0, [
         InlineKeyboardButton("⚡ Cʜᴇᴄᴋ Bᴏᴛ PM ⚡", url=f"https://t.me/{temp.U_NAME}")
