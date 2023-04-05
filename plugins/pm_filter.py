@@ -1787,6 +1787,8 @@ async def auto_filter(client, msg, spoll=False):
             ]
 
     try:
+        key = f"{message.chat.id}-{message.id}"
+        BUTTONS[key] = search
         if settings['auto_delete']:
             btn.insert(0, 
                 [
@@ -1822,9 +1824,6 @@ async def auto_filter(client, msg, spoll=False):
                     InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'sinfo')
                 ]
             )
-    try:
-        key = f"{message.chat.id}-{message.id}"
-        BUTTONS[key] = search
 
     btn.insert(0, [
         InlineKeyboardButton("Send All !", callback_data=f"send_fall#{pre}#{message.chat.id}-{message.id}#{0}")
