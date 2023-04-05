@@ -1757,6 +1757,11 @@ async def auto_filter(client, msg, spoll=False):
                 ]
                 for file in files
             ]
+
+    try:
+        key = f"{message.chat.id}-{message.id}"
+        BUTTONS[key] = search
+        if settings['auto_delete']:
     else:
         if settings["button"]:
             btn = [
