@@ -1177,7 +1177,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "smal":
         buttons = [[
-            InlineKeyboardButton('𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚄𝚁 𝙶𝚁𝙿', url=f'https://t.me/{temp.U_NAME}?startgroup=true')
+            InlineKeyboardButton('𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚄𝚁 𝙶𝚁𝙿', url=f'https://t.me/botechs_bot?startgroup=true')
         ],[
             InlineKeyboardButton('𝙼𝚈 𝙳𝙴𝚅', url=f'http://t.me/Lallu_tgs'),
             InlineKeyboardButton('𝙼𝚈 𝙶𝚁𝙾𝚄𝙿', url=f'https://t.me/EDIT_REPO')
@@ -1198,7 +1198,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "shin":
         buttons = [[
-            InlineKeyboardButton('𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚄𝚁 𝙶𝚁𝙿', url=f'https://t.me/{temp.U_NAME}?startgroup=true')
+            InlineKeyboardButton('𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚄𝚁 𝙶𝚁𝙿', url=f'https://t.me/botechs_bot?startgroup=true')
         ],[
             InlineKeyboardButton('𝙼𝚈 𝙳𝙴𝚅', url=f'http://t.me/Lallu_tgs'),
             InlineKeyboardButton('𝙼𝚈 𝙶𝚁𝙾𝚄𝙿', url=f'https://t.me/EDIT_REPO')
@@ -1219,7 +1219,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "seng":
         buttons = [[
-            InlineKeyboardButton('𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚄𝚁 𝙶𝚁𝙿', url=f'https://t.me/{temp.U_NAME}?startgroup=true')
+            InlineKeyboardButton('𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚄𝚁 𝙶𝚁𝙿', url=f'https://t.me/botechs_bot?startgroup=true')
         ],[
             InlineKeyboardButton('𝙼𝚈 𝙳𝙴𝚅', url=f'http://t.me/Lallu_tgs'),
             InlineKeyboardButton('𝙼𝚈 𝙶𝚁𝙾𝚄𝙿', url=f'https://t.me/EDIT_REPO')
@@ -1240,7 +1240,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "stam":
         buttons = [[
-            InlineKeyboardButton('𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚄𝚁 𝙶𝚁𝙿', url=f'https://t.me/{temp.U_NAME}?startgroup=true')
+            InlineKeyboardButton('𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚄𝚁 𝙶𝚁𝙿', url=f'https://t.me/botechs_bot?startgroup=true')
         ],[
             InlineKeyboardButton('𝙼𝚈 𝙳𝙴𝚅', url=f'http://t.me/Lallu_tgs'),
             InlineKeyboardButton('𝙼𝚈 𝙶𝚁𝙾𝚄𝙿', url=f'https://t.me/EDIT_REPO')
@@ -1354,7 +1354,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "thank":
         await query.message.delete()
         buttons = [[
-            InlineKeyboardButton('𝙰𝙳𝙳 𝙼𝙴', url=f'https://t.me/{temp.U_NAME}?startgroup=true'),
+            InlineKeyboardButton('𝙰𝙳𝙳 𝙼𝙴', url=f'https://t.me/botechs_bot?startgroup=true'),
         ],[
             InlineKeyboardButton('𝚂𝚃𝙰𝚁𝚃 𝙼𝚂𝙶', callback_data='astart'),
             InlineKeyboardButton('𝚌𝚕𝚘𝚜𝚎', callback_data='close_data')
