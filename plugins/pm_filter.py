@@ -770,7 +770,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     joelkb_creatorbeatz = await client.send_cached_media(
                         chat_id=int(FILE_CHANNEL_ID),
                         file_id=file_id,
-                        caption=f_caption,
+                        caption=script.FILE_CHANNEL_TXT.format(title, size, query.from_user.mention, query.message.chat.title, temp.U_NAME),,
                         protect_content=True if ident == "filep" else False,
                         reply_markup=InlineKeyboardMarkup(
                             [
