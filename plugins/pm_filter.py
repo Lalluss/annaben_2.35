@@ -43,11 +43,9 @@ SPELL_MODE = True
 
 SPELL_TXT = """➼ 𝑯𝒆𝒚 {mention}
 
-➣ Title: {title}
-➣ Genre: {genres}
-➣ Year: {year}
-➣ Rating: {rating}
+𝚄𝚛 𝚛𝚎𝚚𝚞𝚎𝚜𝚝𝚎𝚍 𝚖𝚘𝚟𝚒𝚎𝚜 𝚜𝚙𝚎𝚕𝚕𝚒𝚗𝚐 𝚒𝚜 𝚒𝚗𝚌𝚘𝚛𝚛𝚎𝚌𝚝 𝚝𝚑𝚎 𝚌𝚘𝚛𝚛𝚎𝚌𝚝 𝚜𝚙𝚎𝚕𝚕𝚒𝚗𝚐𝚜 𝚒𝚜 𝚐𝚒𝚟𝚎𝚗 𝚋𝚎𝚕𝚕𝚘𝚠
 
+➣ 𝚜𝚙𝚎𝚕𝚕𝚒𝚗𝚐: {title}
 
 𝙲𝙷𝙴𝙲𝙺 𝚃𝙷𝙴 𝙸𝙽𝚂𝚃𝚁𝚄𝙲𝚃𝙸𝙾𝙽𝚂
 
