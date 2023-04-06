@@ -770,7 +770,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     joelkb_creatorbeatz = await client.send_cached_media(
                         chat_id=int(FILE_CHANNEL_ID),
                         file_id=file_id,
-                        caption=script.FILE_CHANNEL_TXT.format(title, size, query.from_user.mention, query.message.chat.title, temp.U_NAME),,
+                        caption=script.FILE_CHANNEL_TXT.format(title, size, query.from_user.mention, query.message.chat.title, temp.U_NAME),
                         protect_content=True if ident == "filep" else False,
                         reply_markup=InlineKeyboardMarkup(
                             [
@@ -784,7 +784,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
                         )
                     )
                     joelkb_msg = await query.message.reply_text(
-                        text=script.FILE_MSG.format(query.from_user.mention, title, size),                        parse_mode=enums.ParseMode.HTML,
+                        text=script.FILE_MSG.format(query.from_user.mention, title, size),
+                        parse_mode=enums.ParseMode.HTML,
                         reply_markup=InlineKeyboardMarkup(
                             [[
                                 InlineKeyboardButton("📁ɢᴇᴛ ꜰɪʟᴇ📁", url=joelkb_creatorbeatz.link)
