@@ -774,11 +774,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
                         protect_content=True if ident == "filep" else False,
                         reply_markup=InlineKeyboardMarkup(
                         [[ 
-                          InlineKeyboardButton('🇮🇳 ᴍᴀʟ', callback_data='malayalam'),
-                          InlineKeyboardButton('🇮🇳 ʜɪɴ', callback_data='hindi'),
-                          InlineKeyboardButton('🇮🇳 ᴛᴀᴍ', callback_data='tamil')
+                          InlineKeyboardButton('𒊹 ᴍᴀʟ', callback_data='malayalam'),
+                          InlineKeyboardButton('𒊹 ʜɪɴ', callback_data='hindi'),
+                          InlineKeyboardButton('𒊹 ᴛᴀᴍ', callback_data='tamil')
                         ],[                         
-                          InlineKeyboardButton("b", url='t.me/CKTalkies')
+                          InlineKeyboardButton("✾𝙹𝙾𝙸𝙽 𝙼𝚈 𝙶𝚁𝙾𝚄𝙾𝙿✾", url='t.me/benana_mvs')
                         ]]
                     )
                   )
@@ -786,9 +786,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
                         text=script.FILE_MSG.format(query.from_user.mention, title, size),                        parse_mode=enums.ParseMode.HTML,
                         reply_markup=InlineKeyboardMarkup(
                             [[
-                                InlineKeyboardButton("📁ɢᴇᴛ ꜰɪʟᴇ📁", url=joelkb_creatorbeatz.link)
+                                InlineKeyboardButton("› 〉 📂ɢᴇᴛ ꜰɪʟᴇ📁", url=joelkb_creatorbeatz.link)
                             ],[
-                                InlineKeyboardButton("📥ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ📥", url='https://t.me/databut')
+                                InlineKeyboardButton("🏴ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ🏴", url='https://t.me/databut')
                             ]]
                         )
                     )
