@@ -158,7 +158,7 @@ Cᴏᴍᴍᴀɴᴅs Aɴᴅ Usᴀɢᴇ:
 
 <b>⚠️ This file will be deleted from here within 10 minute as it has copyright ... !!!</b>
 
-<b>🔅 Pᴏᴡᴇʀᴇᴅ Bʏ :- {}</b>
+<b>🔅 Pᴏᴡᴇʀᴇᴅ Bʏ :- {}</b>"""
 
     ADMIN_TXT = """ʜᴇʟᴘ: Aᴅᴍɪɴ Mᴏᴅs
 <b>ɴᴏᴛᴇ:</b>
