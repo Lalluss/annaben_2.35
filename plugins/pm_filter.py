@@ -773,16 +773,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
                         caption=script.FILE_CHANNEL_TXT.format(title, size, query.from_user.mention, query.message.chat.title),
                         protect_content=True if ident == "filep" else False,
                         reply_markup=InlineKeyboardMarkup(
-                            [
-                             [
-                              InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ', url=GRP_LNK),
-                              InlineKeyboardButton('Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ', url=CHNL_LNK)
-                           ],[
-                              InlineKeyboardButton("Bᴏᴛ Oᴡɴᴇʀ", url="t.me/Lallu_tgs")
-                             ]
-                            ]
-                        )
+                        [[ 
+                          InlineKeyboardButton('🇮🇳 ᴍᴀʟ', callback_data='malayalam'),
+                          InlineKeyboardButton('🇮🇳 ʜɪɴ', callback_data='hindi'),
+                          InlineKeyboardButton('🇮🇳 ᴛᴀᴍ', callback_data='tamil')
+                        ],[                         
+                          InlineKeyboardButton("b", url='t.me/CKTalkies')
+                        ]]
                     )
+                  )
                     joelkb_msg = await query.message.reply_text(
                         text=script.FILE_MSG.format(query.from_user.mention, title, size),                        parse_mode=enums.ParseMode.HTML,
                         reply_markup=InlineKeyboardMarkup(
@@ -1144,6 +1143,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "sinfo":
         await query.answer(text=script.SINFO, show_alert=True)
+
+    elif query.data == "malayalam":
+        await query.answer(text=script.MALAYALAM_TXT, show_alert=True)
+
+    elif query.data == "hindi":
+        await query.answer(text=script.HINDI_TXT, show_alert=True)
+
+    elif query.data == "tamil":
+        await query.answer(text=script.TAMIL_TXT, show_alert=True)
 
     elif query.data == "start":
         await query.message.delete()
