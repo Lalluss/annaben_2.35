@@ -1153,6 +1153,18 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "tamil":
         await query.answer(text=script.TAMIL_TXT, show_alert=True)
 
+    elif query.data == "mal":
+        await query.answer(text=script.MAL_TXT, show_alert=True)
+
+    elif query.data == "tam":
+        await query.answer(text=script.TAM_TXT, show_alert=True)
+
+    elif query.data == "bet":
+        await query.answer(text=script.HIN_TXT, show_alert=True)
+
+    elif query.data == "eng":
+        await query.answer(text=script.ENG_TXT, show_alert=True)
+
     elif query.data == "start":
         await query.message.delete()
         buttons = [[
@@ -1487,55 +1499,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             text=GTFL_TXT.format(temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
-        )
-    elif query.data == "mal":
-        buttons = [[
-            InlineKeyboardButton('SEARCH', url='https://google.com/find?q={reply}')
-        ],[
-            InlineKeyboardButton('Cʟᴏsᴇ', callback_data='close_data')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.MAL_TXT.format(temp.B_NAME),
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
-    elif query.data == "eng":
-        buttons = [[
-            InlineKeyboardButton('SEARCH', url='https://google.com/find?q={reply}')
-        ],[
-            InlineKeyboardButton('Cʟᴏsᴇ', callback_data='close_data')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.ENG_TXT.format(temp.B_NAME),
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
-    elif query.data == "bet":
-        buttons = [[
-            InlineKeyboardButton('SEARCH', url='https://google.com/find?q={reply}')
-        ],[
-            InlineKeyboardButton('Cʟᴏsᴇ', callback_data='close_data')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.HIN_TXT.format(temp.B_NAME),
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
-    elif query.data == "tam":
-        buttons = [[
-            InlineKeyboardButton('SEARCH', url='https://google.com/find?q={reply}')
-        ],[
-            InlineKeyboardButton('Cʟᴏsᴇ', callback_data='close_data')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.TAM_TXT.format(temp.B_NAME),
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
+        )    
     elif query.data == "admin":
         await query.message.delete()
         buttons = [[
