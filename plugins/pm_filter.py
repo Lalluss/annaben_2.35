@@ -1165,6 +1165,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "eng":
         await query.answer(text=script.ENG_TXT, show_alert=True)
 
+    elif query.data == "inst":
+        await query.answer(text=script.INST_TXT, show_alert=True)
+
     elif query.data == "start":
         await query.message.delete()
         buttons = [[
@@ -1675,7 +1678,7 @@ async def auto_filter(client, msg, spoll=False):
                 if SPELL_MODE:  
                     reply = search.replace(" ", "+")
                     reply_markup = InlineKeyboardMarkup([[
-                        InlineKeyboardButton("📁𝙸𝙽𝚂𝚃𝚁𝚄𝙲𝚃𝙸𝙾𝙽𝚂📁", callback_data="instr")
+                        InlineKeyboardButton("📁𝙸𝙽𝚂𝚃𝚁𝚄𝙲𝚃𝙸𝙾𝙽𝚂📁", callback_data="inst")
                     ],[
                         InlineKeyboardButton("ᴍᴀʟ", callback_data="mal"),
                         InlineKeyboardButton("ᴛᴀᴍ", callback_data="tam"),
