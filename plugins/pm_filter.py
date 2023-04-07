@@ -1682,7 +1682,7 @@ async def auto_filter(client, msg, spoll=False):
                         InlineKeyboardButton("ʜɪɴ", callback_data="bet"),
                         InlineKeyboardButton("ᴇɴɢ", callback_data="eng")
                     ],[
-                        InlineKeyboardButton🔍ꜱᴇᴀʀᴄʜ ɢᴏᴏɢʟ🔎", url=f"https://google.com/find?q={reply}")
+                        InlineKeyboardButton("🔍ꜱᴇᴀʀᴄʜ ɢᴏᴏɢʟ🔎", url=f"https://google.com/find?q={reply}")
                     ]])
                     imdb=await get_poster(search)
                     if imdb and imdb.get('poster'):
