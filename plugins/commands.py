@@ -4,6 +4,7 @@ import random
 import asyncio
 import subprocess
 import requests as req
+import message
 from Script import script
 from pyrogram import Client, filters, enums
 from pyrogram.errors import ChatAdminRequired, FloodWait
