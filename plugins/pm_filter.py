@@ -774,8 +774,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
                         protect_content=True if ident == "filep" else False,
                         reply_markup=InlineKeyboardMarkup(
                         [[
-                          InlineKeyboardButton('Fast Download', url=await get_shortlink(client.message.chat.id,f"https://telegram.me/botechs_bot?start=files_{file.file_id}"))
-                        ],[
                           InlineKeyboardButton('𒊹 ᴍᴀʟ', callback_data='malayalam'),
                           InlineKeyboardButton('𒊹 ʜɪɴ', callback_data='hindi'),
                           InlineKeyboardButton('𒊹 ᴛᴀᴍ', callback_data='tamil')
