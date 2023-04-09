@@ -12,7 +12,7 @@ UPLOAD_START = "<b>Downloading Completed Now I'm Uploading Into TeleGram</b>"
 AFTER_SUCCESSFUL_UPLOAD_MSG = "<b>Thank you for Using Me Support Our Channel @NandhaBots</b>"
 
 @Client.on_message(filters.command("rename"))
-async def rename(_, message):
+async def rename(client, message):
           try:
              if not message.reply_to_message and not message.reply_to_message.media:
                      return await message.reply("reply to media's")
@@ -20,7 +20,7 @@ async def rename(_, message):
                   return await message.reply("provide some text with in extinction!\n for example: `/rename movies.mkv`")
              name = message.text.split(None, 1)[1]
              if message.reply_to_message.media:
-                 a = await Client.send_message(
+                 a = await client.send_message(
         chat_id=message.chat.id,
         text=DOWNLOAD_START,
         reply_to_message_id=message.id
@@ -34,13 +34,13 @@ async def rename(_, message):
                 a,
                 c_time
             ))
-                 await Client.edit_message_text(
+                 await client.edit_message_text(
                 text=UPLOAD_START,
                 chat_id=message.chat.id,
                 message_id=a.id
                 )
                  await message.reply_document(downloads)
-                 await Client.edit_message_text(
+                 await client.edit_message_text(
                 text=AFTER_SUCCESSFUL_UPLOAD_MSG,
                 chat_id=message.chat.id,
                 message_id=a.id,
