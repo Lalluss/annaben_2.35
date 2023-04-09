@@ -4,7 +4,7 @@ import requests
 
 #made by t.me/nandhaxd
 
-@client.on_message(filters.command("test"))
+@Client.on_message(filters.command("test"))
 async def test(_, m):
              api = requests.get("https://api.truthordarebot.xyz/v1/dare").json()
              text = m.text.split(None, 1)[1]
@@ -17,7 +17,7 @@ async def test(_, m):
                    await m.reply(de)
 
 
-@client.on_message(filters.command("dare"))
+@Client.on_message(filters.command("dare"))
 async def dare(_, m):
          reply = m.reply_to_message
          if reply:
@@ -38,7 +38,7 @@ Hey! {reply.from_user.mention}
                """
                await m.reply_text(dare)
 
-@client.on_message(filters.command("truth"))
+@Client.on_message(filters.command("truth"))
 async def truth(_, m):
          reply = m.reply_to_message
          if reply:
