@@ -9,7 +9,7 @@ from database.progress import progress_for_pyrogram
 
 DOWNLOAD_START = "<b>Downloading To My server !! Pls Wait</b>"
 UPLOAD_START = "<b>Downloading Completed Now I'm Uploading Into TeleGram</b>"
-AFTER_SUCCESSFUL_UPLOAD_MSG = "<b>Thank you for Using Me Support Our Channel @NandhaBots</b>"
+AFTER_SUCCESSFUL_UPLOAD_MSG = "<b>Thank you for Using Me Support Channel @LSBOTZ_UPDATE</b>"
 
 @Client.on_message(filters.command("rename"))
 async def rename(client, message):
