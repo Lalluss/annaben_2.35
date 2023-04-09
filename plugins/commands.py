@@ -286,6 +286,7 @@ async def start(client, message):
                 reply_markup=InlineKeyboardMarkup(
                     [
                      [
+                      InlineKeyboardButton('Url Shortner', url="https://{URL}/shortLink"),
                       InlineKeyboardButton('Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ', url="t.me/EDIT_REPO")
                    ],[
                       InlineKeyboardButton("Bᴏᴛ Oᴡɴᴇʀ", url="t.me/lallu_tgs")
@@ -338,6 +339,7 @@ async def start(client, message):
         reply_markup=InlineKeyboardMarkup(
             [
              [
+              InlineKeyboardButton('Url Shortner', url="https://{URL}/shortLink"),
               InlineKeyboardButton('Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ', url="t.me/EDIT_REPO")
            ],[
               InlineKeyboardButton("Bᴏᴛ Oᴡɴᴇʀ", url="t.me/Lallu_tgs")
