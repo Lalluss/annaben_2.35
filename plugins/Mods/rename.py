@@ -34,7 +34,7 @@ async def rename(_, message):
                 a,
                 c_time
             ))
-                 await bot.edit_message_text(
+                 await client.edit_message_text(
                 text=UPLOAD_START,
                 chat_id=message.chat.id,
                 message_id=a.id
