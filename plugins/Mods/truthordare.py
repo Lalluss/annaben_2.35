@@ -1,5 +1,5 @@
 from pyrogram import filters
-from pyrogram import client
+from pyrogram import Client
 import requests 
 
 #made by t.me/nandhaxd
