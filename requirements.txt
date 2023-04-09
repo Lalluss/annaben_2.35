@@ -13,3 +13,6 @@ aiohttp
 telegraph==1.4.1
 openai==0.25.0
 datetime
+wget
+yt_dlp
+aiofiles
