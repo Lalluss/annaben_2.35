@@ -43,7 +43,7 @@ async def ameme(_, query: CallbackQuery):
         ),
     )
                 
-@Clien.on_message(filters.command("meme"))
+@Client.on_message(filters.command("meme"))
 async def memes(_, m):
      res = requests.get("https://meme-api.herokuapp.com/gimme/memes").json()
      url = res['url']
