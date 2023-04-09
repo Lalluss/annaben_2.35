@@ -20,7 +20,7 @@ async def rename(_, message):
                   return await message.reply("provide some text with in extinction!\n for example: `/rename movies.mkv`")
              name = message.text.split(None, 1)[1]
              if message.reply_to_message.media:
-                 a = await client.send_message(
+                 a = await Client.send_message(
         chat_id=message.chat.id,
         text=DOWNLOAD_START,
         reply_to_message_id=message.id
@@ -34,13 +34,13 @@ async def rename(_, message):
                 a,
                 c_time
             ))
-                 await client.edit_message_text(
+                 await Client.edit_message_text(
                 text=UPLOAD_START,
                 chat_id=message.chat.id,
                 message_id=a.id
                 )
                  await message.reply_document(downloads)
-                 await bot.edit_message_text(
+                 await Client.edit_message_text(
                 text=AFTER_SUCCESSFUL_UPLOAD_MSG,
                 chat_id=message.chat.id,
                 message_id=a.id,
