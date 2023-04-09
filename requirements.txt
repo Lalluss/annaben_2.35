@@ -19,3 +19,4 @@ aiofiles
 youtube_search
 youtube-search-python==1.4.6
 youtube-dl
+secureme
