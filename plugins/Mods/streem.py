@@ -6,7 +6,7 @@ import asyncio
 from asyncio import TimeoutError
 from Lallus.database import Database
 from Lallus.human_readable import humanbytes
-from info import BIN_CHANNEL, DATABASE_URI, BANNED_CHANNELS
+from info import BIN_CHANNEL, DATABASE_URI, BANNED_CHANNELS, name
 from Lallus.vars import Var
 from urllib.parse import quote_plus
 from pyrogram import filters, Client
