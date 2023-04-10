@@ -6,7 +6,7 @@ import asyncio
 from asyncio import TimeoutError
 from Lallus.database import Database
 from Lallus.human_readable import humanbytes
-from info import BIN_CHANNEL, DATABASE_URL, BANNED_CHANNELS
+from info import BIN_CHANNEL, DATABASE_URI, BANNED_CHANNELS
 from Lallus.vars import Var
 from urllib.parse import quote_plus
 from pyrogram import filters, Client
@@ -14,12 +14,12 @@ from pyrogram.errors import FloodWait, UserNotParticipant
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
 from Lallus.file_properties import get_name, get_hash, get_media_file_size
-db = Database(DATABASE_URL, info.name)
+db = Database(DATABASE_URI, info.name)
 
 
 MY_PASS = os.environ.get("MY_PASS", None)
 pass_dict = {}
-pass_db = Database(DATABASE_URL, "ag_passwords")
+pass_db = Database(DATABASE_URI, "ag_passwords")
 
 
 
