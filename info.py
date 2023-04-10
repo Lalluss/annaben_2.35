@@ -85,14 +85,6 @@ FILE_CHANNEL_ID = environ.get("FILE_CHANNEL_ID", "-1001612403432")
 
 LANGUAGES = ["malayalam", "tamil", "english", "hindi", "telugu", "kannada"]
 
-        ON_HEROKU = False
-    FQDN = str(getenv('FQDN', BIND_ADRESS)) if not ON_HEROKU or getenv('FQDN') else APP_NAME+'.herokuapp.com'
-    HAS_SSL=bool(getenv('HAS_SSL',False))
-    if HAS_SSL:
-        URL = "https://{}/".format(FQDN)
-    else:
-        URL = "http://{}/".format(FQDN)
-
 LOG_STR = "Current Cusomized Configurations are:-\n"
 LOG_STR += ("IMDB Results are enabled, Bot will be showing imdb details for you queries.\n" if IMDB else "IMBD Results are disabled.\n")
 LOG_STR += ("P_TTI_SHOW_OFF found , Users will be redirected to send /start to Bot PM instead of sending file file directly\n" if P_TTI_SHOW_OFF else "P_TTI_SHOW_OFF is disabled files will be send in PM, instead of sending start.\n")
