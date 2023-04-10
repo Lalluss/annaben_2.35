@@ -42,7 +42,7 @@ reqst_channel = environ.get('REQST_CHANNEL_ID')
 REQST_CHANNEL = int(reqst_channel) if reqst_channel and id_pattern.search(reqst_channel) else None
 SUPPORT_CHAT_ID = int(support_chat_id) if support_chat_id and id_pattern.search(support_chat_id) else None
 NO_RESULTS_MSG = bool(environ.get("NO_RESULTS_MSG", False))
-BIN_CHANNEL =  [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('BIN_CHANNEL', '-1001926961424').split()]
+BIN_CHANNEL =  [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('BIN_CHANNEL', '-1001965839568').split()]
 BANNED_CHANNELS = list(set(int(x) for x in str(getenv("BANNED_CHANNELS", "-1001362659779")).split()))
 
 # MongoDB information
