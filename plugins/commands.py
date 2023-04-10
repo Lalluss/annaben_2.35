@@ -20,6 +20,8 @@ logger = logging.getLogger(__name__)
 
 BATCH_FILES = {}
 
+HELP_TXT="""HEY HERE IS MY HELP CMDS"""
+
 STICKER_PACK = ["CAACAgUAAxkBAAEIWoNkIwh1HrX8EEaXqkgGZXKX1gOymgACQAgAAp6lGVVUeWhnuKcXIy8E",
                 "CAACAgUAAxkBAAEIXIdkI8vMd0mF--GWCoMHyZH0uczIOAACKQoAAuZdIFU_0o8pOEWEDy8E",
                 "CAACAgUAAxkBAAEIXJJkI85g2mL5hZSivLquVGR_EOu3ggACOQsAAoWBIFWX3Z610g9Lli8E",
@@ -27,6 +29,24 @@ STICKER_PACK = ["CAACAgUAAxkBAAEIWoNkIwh1HrX8EEaXqkgGZXKX1gOymgACQAgAAp6lGVVUeWh
                 "CAACAgUAAxkBAAEIXJZkI88PuzY1jx9mt9UWgww2fD_O4QACOgkAAsBsIVWcH9by--rsFi8E",
 ]     
 
+MY_PICS=["https://telegra.ph/file/45991424ebfe111f195e4.jpg",
+]
+
+@Client.on_callback_query(filters.regex("help_back"))
+async def help(client, message):
+        buttons = [[
+        InlineKeyboardButton('My group', url=f'http://t.me/dk_botx') ] ,
+      [
+        InlineKeyboardButton('Back', callback_data='start'),
+        InlineKeyboardButton('ᴄʟᴏsᴇ', callback_data='close')
+    ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+            await message.reply_photo(
+            photo=random.choice(MY_PICS),
+            caption=HELP_TXT
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
 
 @Client.on_message(filters.command("start") & filters.incoming)
 async def start(client, message):
