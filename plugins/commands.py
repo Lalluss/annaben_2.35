@@ -44,7 +44,7 @@ HELP_BUTTON = [[
      ]]      
  
          
-@bot.on_message(filters.command(["help"], ["/", ".", "?"]))
+@Client.on_message(filters.command(["help"], ["/", ".", "?"]))
 async def start(_, m: Message):
    await m.reply_photo(random.choice(BOT_IMG),caption=HELP_TEXT.format(m.from_user.mention),
                       reply_markup=InlineKeyboardMarkup(HELP_BUTTON),)
