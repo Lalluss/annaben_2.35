@@ -14,12 +14,12 @@ from pyrogram.errors import FloodWait, UserNotParticipant
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
 from Lallus.file_properties import get_name, get_hash, get_media_file_size
-db = Database(DATABASE_URI, name)
+db = Database(Var.DATABASE_URL, name)
 
 
 MY_PASS = os.environ.get("MY_PASS", None)
 pass_dict = {}
-pass_db = Database(DATABASE_URI, "ag_passwords")
+pass_db = Database(Var.DATABASE_URL, "ag_passwords")
 
 
 
