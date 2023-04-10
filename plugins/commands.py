@@ -20,7 +20,6 @@ logger = logging.getLogger(__name__)
 
 BATCH_FILES = {}
 
-HELP_TXT="""HEY HERE IS MY HELP CMDS"""
 
 STICKER_PACK = ["CAACAgUAAxkBAAEIWoNkIwh1HrX8EEaXqkgGZXKX1gOymgACQAgAAp6lGVVUeWhnuKcXIy8E",
                 "CAACAgUAAxkBAAEIXIdkI8vMd0mF--GWCoMHyZH0uczIOAACKQoAAuZdIFU_0o8pOEWEDy8E",
@@ -32,20 +31,24 @@ STICKER_PACK = ["CAACAgUAAxkBAAEIWoNkIwh1HrX8EEaXqkgGZXKX1gOymgACQAgAAp6lGVVUeWh
 MY_PICS=["https://telegra.ph/file/45991424ebfe111f195e4.jpg",
 ]
 
-@Client.on_callback_query(filters.regex("help_back"))
-async def help(client, message):
-        buttons = [[
-        InlineKeyboardButton('My group', url=f'http://t.me/dk_botx') ] ,
-      [
-        InlineKeyboardButton('Back', callback_data='start'),
-        InlineKeyboardButton('ᴄʟᴏsᴇ', callback_data='close')
-    ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-            await message.reply_text(
-            text=HELP_TXT
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
+HELP_TEXT = """
+**Hello Dear**!
+**I'm benan I will manage your groups and make your group joyful bellow check my
+help and commands!**
+"""
+
+HELP_BUTTON = [[
+        InlineKeyboardButton('lang', callback_data='lang'),
+        InlineKeyboardButton('back', callback_data='start'),
+        InlineKeyboardButton('close', callback_data='close') 
+     ]]      
+ 
+         
+@bot.on_message(filters.command(["help"], ["/", ".", "?"]))
+async def start(_, m: Message):
+   await m.reply_photo(random.choice(BOT_IMG),caption=HELP_TEXT.format(m.from_user.mention),
+                      reply_markup=InlineKeyboardMarkup(HELP_BUTTON),)
+           
 
 @Client.on_message(filters.command("start") & filters.incoming)
 async def start(client, message):
