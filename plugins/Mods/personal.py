@@ -18,18 +18,18 @@ async def whisper(client, message):
       user = await client.get_users(user_id)
       
              
-      button = [[ InlineKeyboardButton(text="Open Whisper Message!", callback_data="whisper_data")]]
+      button = [[ InlineKeyboardButton(text="Open Secret Message!", callback_data="whisper_data")]]
       whisper = f"""** 🕵 New Secret Message!**
       
 **From User:** {mention}
 **To UserID:** {user.mention}
 
 **Note: this Message only can open the: To UserID
-Your Not Allow To See Other Personal Messages!**
+You are Not Allow To See Other Personal Messages!**
 """
-      await bot.send_message(message.chat.id,whisper,
+      await client.send_message(message.chat.id,whisper,
                reply_markup=InlineKeyboardMarkup(button))
-      bot_stats = await bot.get_chat_member(message.chat.id, "self")
+      bot_stats = await client.get_chat_member(message.chat.id, "self")
       if bot_stats.privileges:
             return await message.delete()
 
