@@ -51,7 +51,7 @@ BANNED_CHANNELS = list(set(int(x) for x in str(getenv("BANNED_CHANNELS", "-10013
 DATABASE_URI = environ.get('DATABASE_URI', "")
 DATABASE_NAME = environ.get('DATABASE_NAME', "cluster0")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
-name = str(getenv('name', 'filetolinkbot'))
+SESSION_NAME = str(getenv('SESSION_NAME', 'benanabot'))
 
 # Others
 VERIFY = bool(environ.get('VERIFY', False))
