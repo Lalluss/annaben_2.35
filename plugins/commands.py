@@ -40,7 +40,7 @@ async def help(client, message):
         InlineKeyboardButton('Back', callback_data='start'),
         InlineKeyboardButton('ᴄʟᴏsᴇ', callback_data='close')
     ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
+       reply_markup = InlineKeyboardMarkup(buttons)
             await message.reply_photo(
             photo=random.choice(MY_PICS),
             caption=HELP_TXT
