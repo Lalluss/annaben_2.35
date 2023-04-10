@@ -62,7 +62,7 @@ async def private_receive_handler(client, m: Message):
         except Exception:
             await client.send_message(
                 chat_id=m.chat.id,
-                text="**Sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ Wʀᴏɴɢ. Cᴏɴᴛᴀᴄᴛ ᴍʏ ʙᴏss** @Avishkarpatil",
+                text="**Sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ Wʀᴏɴɢ. Cᴏɴᴛᴀᴄᴛ ᴍʏ ʙᴏss** @Lallu_tg",
                 parse_mode=ParseMode.MARKDOWN,
                 disable_web_page_preview=True)
             return
