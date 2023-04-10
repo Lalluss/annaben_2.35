@@ -13,12 +13,6 @@ def is_enabled(value, default):
     else:
         return default
 
-    FQDN = str(getenv('FQDN', BIND_ADRESS)) if not ON_HEROKU or getenv('FQDN') else APP_NAME+'.herokuapp.com'
-    HAS_SSL=bool(getenv('HAS_SSL',False))
-    if HAS_SSL:
-        URL = "https://{}/".format(FQDN)
-    else:
-        URL = "http://{}/".format(FQDN)
 
 # Bot information
 SESSION = environ.get('SESSION', 'Media_search')
@@ -88,6 +82,15 @@ PUBLIC_FILE_STORE = is_enabled((environ.get('PUBLIC_FILE_STORE', "True")), True)
 FILE_CHANNEL_ID = environ.get("FILE_CHANNEL_ID", "-1001612403432")
 
 LANGUAGES = ["malayalam", "tamil", "english", "hindi", "telugu", "kannada"]
+
+    else:
+        ON_HEROKU = False
+    FQDN = str(getenv('FQDN', BIND_ADRESS)) if not ON_HEROKU or getenv('FQDN') else APP_NAME+'.herokuapp.com'
+    HAS_SSL=bool(getenv('HAS_SSL',False))
+    if HAS_SSL:
+        URL = "https://{}/".format(FQDN)
+    else:
+        URL = "http://{}/".format(FQDN)
 
 LOG_STR = "Current Cusomized Configurations are:-\n"
 LOG_STR += ("IMDB Results are enabled, Bot will be showing imdb details for you queries.\n" if IMDB else "IMBD Results are disabled.\n")
