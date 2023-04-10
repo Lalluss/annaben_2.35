@@ -40,10 +40,9 @@ async def help(client, message):
         InlineKeyboardButton('Back', callback_data='start'),
         InlineKeyboardButton('ᴄʟᴏsᴇ', callback_data='close')
     ]]
-       reply_markup = InlineKeyboardMarkup(buttons)
-            await message.reply_photo(
-            photo=random.choice(MY_PICS),
-            caption=HELP_TXT
+        reply_markup = InlineKeyboardMarkup(buttons)
+            await message.reply_text(
+            text=HELP_TXT
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
