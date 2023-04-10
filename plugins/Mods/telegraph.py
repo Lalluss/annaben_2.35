@@ -2,11 +2,11 @@ from pyrogram import filters
 from pyrogram.types import Message
 from pyrogram.types.bots_and_keyboards.inline_keyboard_button import InlineKeyboardButton
 from pyrogram.types.bots_and_keyboards.inline_keyboard_markup import InlineKeyboardMarkup
-from pyrogram import Client as app, telegraph, dev_user
+from pyrogram import Client 
 from telegraph import upload_file
 
-@app.on_message(filters.command("txt"))
-async def txt(_, message: Message):
+@Client.on_message(filters.command("txt"))
+async def txt(client, message: Message):
     reply = message.reply_to_message
 
     if not reply or not reply.text:
@@ -16,7 +16,7 @@ async def txt(_, message: Message):
         return await message.reply("**Usage:**\n /txt [Page name]")
 
     page_name = message.text.split(None, 1)[1]
-    page = telegraph.create_page(
+    page = client.create_page(
         page_name, html_content=(reply.text.html).replace("\n", "<br>")
     )
     return await message.reply(
@@ -26,8 +26,8 @@ async def txt(_, message: Message):
     )
         
 
-@app.on_message(filters.command('tm'))
-def tm(_,message):
+@Client.on_message(filters.command('tm'))
+def tm(clinet,message):
     reply = message.reply_to_message
     if not reply:
           return message.reply_text("Reply to a **Media** to get a permanent telegra.ph link.")
