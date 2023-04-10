@@ -33,7 +33,7 @@ async def private_receive_handler(client, message):
             f"New User Joined! : \n\n Name : [{m.from_user.first_name}](tg://user?id={m.from_user.id}) Started Your Bot!!"
         )
     try:
-        log_msg = await message.forward(chat_id=BIN_CHANNEL)
+        log_msg = await client.forward(chat_id=BIN_CHANNEL)
         stream_link = f"{Var.URL}watch/{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
         online_link = f"{Var.URL}{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
        
