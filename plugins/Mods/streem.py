@@ -31,12 +31,12 @@ def get_media_file_name(m):
 
 
 @Client.on_message(filters.private & (filters.command("link")))
-async def private_receive_handler(client, message):
+async def private_receive_handler(client, m:Message):
           
     if not message.reply_to_message and not message.reply_to_message.media:
           return await message.reply("reply to media's")
-    if not await db.is_user_exist(message.from_user.id):
-        await db.add_user(message.from_user.id)
+    if not await db.is_user_exist(m.from_user.id):
+        await db.add_user(m.from_user.id)
         await client.send_message(
             BIN_CHANNEL,
             f"Nᴇᴡ Usᴇʀ Jᴏɪɴᴇᴅ : \n\nNᴀᴍᴇ : [{m.from_user.first_name}](tg://user?id={m.from_user.id}) Sᴛᴀʀᴛᴇᴅ Yᴏᴜʀ Bᴏᴛ !!"
@@ -54,7 +54,7 @@ async def private_receive_handler(client, message):
                 return
         except UserNotParticipant:
             await client.send_message(
-                chat_id=message.chat.id,
+                chat_id=m.chat.id,
                 text="""<i>Jᴏɪɴ ᴍʏ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ ᴛᴏ ᴜꜱᴇ ᴍᴇ 🔐</i>""",
                 reply_markup=InlineKeyboardMarkup(
                     [[ InlineKeyboardButton("Jᴏɪɴ ɴᴏᴡ 🔓", url=f"https://t.me/{Var.UPDATES_CHANNEL}") ]]
@@ -65,7 +65,7 @@ async def private_receive_handler(client, message):
         except Exception as e:
             print(e)
             await client.send_message(
-                chat_id=message.chat.id,
+                chat_id=m.chat.id,
                 text="**Sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ Wʀᴏɴɢ. Cᴏɴᴛᴀᴄᴛ ᴍʏ ʙᴏss** @Lallu_tg",
                 parse_mode=ParseMode.MARKDOWN,
                 disable_web_page_preview=True)
