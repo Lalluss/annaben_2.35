@@ -43,7 +43,7 @@ async def private_receive_handler(client, m:Message):
         )
     if UPDATES_CHANNEL != "None":
         try:
-            user = await client.get_chat_member(Var.UPDATES_CHANNEL, m.chat.id)
+            user = await client.get_chat_member(UPDATES_CHANNEL, m.chat.id)
             if user.status == "kicked":
                 await client.send_message(
                     chat_id=m.chat.id,
