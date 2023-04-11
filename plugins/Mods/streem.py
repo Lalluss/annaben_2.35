@@ -60,6 +60,7 @@ async def private_receive_handler(client, m: Message):
             )
             return
         except Exception as e:
+            print(e)
             await client.send_message(
                 chat_id=m.chat.id,
                 text="**Sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ Wʀᴏɴɢ. Cᴏɴᴛᴀᴄᴛ ᴍʏ ʙᴏss** @Lallu_tg",
