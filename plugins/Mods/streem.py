@@ -30,7 +30,7 @@ def get_media_file_name(m):
         return None
 
 
-@Client.on_message(filters.private & (filters.command("link"))
+@Client.on_message(filters.private & (filters.command("link")))
 async def private_receive_handler(client, m: Message):
           try:
              if not message.reply_to_message and not message.reply_to_message.media:
