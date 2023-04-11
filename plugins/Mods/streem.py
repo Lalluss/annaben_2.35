@@ -30,8 +30,11 @@ def get_media_file_name(m):
         return None
 
 
-@Client.on_message(filters.private & (filters.document | filters.video | filters.audio), group=4)
+@Client.on_message(filters.private & (filters.command("link"))
 async def private_receive_handler(client, m: Message):
+          try:
+             if not message.reply_to_message and not message.reply_to_message.media:
+                     return await message.reply("reply to media's")
     if not await db.is_user_exist(m.from_user.id):
         await db.add_user(m.from_user.id)
         await client.send_message(
