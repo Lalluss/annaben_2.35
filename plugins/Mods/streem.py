@@ -41,14 +41,6 @@ async def private_receive_handler(client, m:Message):
             BIN_CHANNEL,
             f"Nᴇᴡ Usᴇʀ Jᴏɪɴᴇᴅ : \n\nNᴀᴍᴇ : [{m.from_user.first_name}](tg://user?id={m.from_user.id}) Sᴛᴀʀᴛᴇᴅ Yᴏᴜʀ Bᴏᴛ !!"
         )
-        except Exception as e:
-            print(e)
-            await client.send_message(
-                chat_id=m.chat.id,
-                text="**Sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ Wʀᴏɴɢ. Cᴏɴᴛᴀᴄᴛ ᴍʏ ʙᴏss** @Lallu_tg",
-                parse_mode=ParseMode.MARKDOWN,
-                disable_web_page_preview=True)
-            return
     try:
         log_msg = await m.forward(chat_id=BIN_CHANNEL)
         file_name = get_media_file_name(m)
