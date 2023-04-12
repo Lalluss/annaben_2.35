@@ -41,27 +41,6 @@ async def private_receive_handler(client, m:Message):
             BIN_CHANNEL,
             f"Nᴇᴡ Usᴇʀ Jᴏɪɴᴇᴅ : \n\nNᴀᴍᴇ : [{m.from_user.first_name}](tg://user?id={m.from_user.id}) Sᴛᴀʀᴛᴇᴅ Yᴏᴜʀ Bᴏᴛ !!"
         )
-    if UPDATES_CHANNEL != "None":
-        try:
-            user = await client.get_chat_member(UPDATES_CHANNEL, m.chat.id)
-            if user.status == "kicked":
-                await client.send_message(
-                    chat_id=m.chat.id,
-                    text="__Sᴏʀʀʏ Sɪʀ, Yᴏᴜ ᴀʀᴇ Bᴀɴɴᴇᴅ ᴛᴏ ᴜsᴇ ᴍᴇ.__\n\n  **Cᴏɴᴛᴀᴄᴛ Dᴇᴠᴇʟᴏᴘᴇʀ @EDIT_REPO Tʜᴇʏ Wɪʟʟ Hᴇʟᴘ Yᴏᴜ**",
-                    parse_mode=ParseMode.MARKDOWN,
-                    disable_web_page_preview=True
-                )
-                return
-        except UserNotParticipant:
-            await client.send_message(
-                chat_id=m.chat.id,
-                text="""<i>Jᴏɪɴ ᴍʏ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ ᴛᴏ ᴜꜱᴇ ᴍᴇ 🔐</i>""",
-                reply_markup=InlineKeyboardMarkup(
-                    [[ InlineKeyboardButton("Jᴏɪɴ ɴᴏᴡ 🔓", url=f"https://t.me/LSBOTZ_UPDATE") ]]
-                ),
-                parse_mode=ParseMode.HTML
-            )
-            return
         except Exception as e:
             print(e)
             await client.send_message(
