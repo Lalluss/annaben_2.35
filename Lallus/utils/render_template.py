@@ -2,8 +2,8 @@
 
 from Lallus.vars import Var
 from pyrogram import Client
-from Adarsh.utils.custom_dl import TGCustomYield
-from Adarsh.utils.file_size import human_size
+from Lallus.utils.custom_dl import TGCustomYield
+from Lallus.utils.file_size import human_size
 import urllib.parse
 import secrets
 import mimetypes
