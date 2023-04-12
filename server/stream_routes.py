@@ -10,6 +10,7 @@ from pyrogram import Client
 from Lallus.utils.custom_dl import TGCustomYield, chunk_size, offset_fix
 from Lallus.utils.render_template import render_page
 from Lallus.utils.time_format import get_readable_time
+from info import BIN_CHANNEL
 import time
 StartTime = time.time()
 routes = web.RouteTableDef()
@@ -51,7 +52,7 @@ async def old_stream_handler(request):
 
 async def media_streamer(request, message_id: int):
     range_header = request.headers.get('Range', 0)
-    media_msg = await Client.get_messages(Var.BIN_CHANNEL, message_id)
+    media_msg = await Client.get_messages(BIN_CHANNEL, message_id)
     file_properties = await TGCustomYield().generate_file_properties(media_msg)
     file_size = file_properties.file_size
 
