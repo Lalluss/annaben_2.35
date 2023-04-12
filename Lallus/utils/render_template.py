@@ -1,6 +1,6 @@
 
 
-from Lallus.vars import Var
+from Lallus.vars import Var, BIN_CHANNEL
 from pyrogram import Client
 from Lallus.utils.custom_dl import TGCustomYield
 from Lallus.utils.file_size import human_size
