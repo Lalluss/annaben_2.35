@@ -42,9 +42,9 @@ async def private_receive_handler(client, m:Message):
             f"Nᴇᴡ Usᴇʀ Jᴏɪɴᴇᴅ : \n\nNᴀᴍᴇ : [{m.from_user.first_name}](tg://user?id={m.from_user.id}) Sᴛᴀʀᴛᴇᴅ Yᴏᴜʀ Bᴏᴛ !!"
         )
     try:
-        log_msg = await m.forward(chat_id=BIN_CHANNEL)
-        file_name = get_media_file_name(m)
-        file_size = humanbytes(get_media_file_size(m))
+        log_msg = await m.reply_to_message.forward(chat_id=BIN_CHANNEL)
+        file_name = get_media_file_name(m.reply_to_message)
+        file_size = humanbytes(get_media_file_size(m.reply_to_message))
         stream_link = "https://{}/{}/{}".format(Var.FQDN, log_msg.id, file_name) if Var.ON_HEROKU or Var.NO_PORT else \
             "http://{}:{}/{}/{}".format(Var.FQDN,
                                     Var.PORT,
