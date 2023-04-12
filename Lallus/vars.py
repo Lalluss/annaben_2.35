@@ -8,6 +8,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 class Var(object):
+    BIND_ADRESS = str(getenv('WEB_SERVER_BIND_ADDRESS', '0.0.0.0'))
     APP_NAME = str(getenv('APP_NAME'))
     OWNER_USERNAME = str(getenv('OWNER_USERNAME'))
     if 'DYNO' in environ:
