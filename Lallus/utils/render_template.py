@@ -1,7 +1,7 @@
 
 
-from Adarsh.vars import Var
-from Adarsh.bot import StreamBot
+from Lallus.vars import Var
+from pyrogram import Client
 from Adarsh.utils.custom_dl import TGCustomYield
 from Adarsh.utils.file_size import human_size
 import urllib.parse
@@ -12,7 +12,7 @@ import logging
 import aiohttp
 
 async def fetch_properties(message_id):
-    media_msg = await StreamBot.get_messages(Var.BIN_CHANNEL, message_id)
+    media_msg = await Clinet.get_messages(Var.BIN_CHANNEL, message_id)
     file_properties = await TGCustomYield().generate_file_properties(media_msg)
     file_name = file_properties.file_name if file_properties.file_name \
         else f"{secrets.token_hex(2)}.jpeg"
