@@ -4,7 +4,7 @@ import math
 import logging
 import secrets
 import mimetypes
-from ..vars import Var
+from Lallus.vars import Var
 from aiohttp import web
 from pyrogram import Client
 from Lallus.utils.custom_dl import TGCustomYield, chunk_size, offset_fix
