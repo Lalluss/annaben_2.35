@@ -33,7 +33,7 @@ def get_media_file_name(m):
 @Client.on_message(filters.private & (filters.command("link")))
 async def private_receive_handler(client, m:Message):
           
-    if not m.reply_to_message and not message.reply_to_message.media:
+    if not m.reply_to_message and not m.reply_to_message.media:
           return await message.reply("reply to media's")
     if not await db.is_user_exist(m.from_user.id):
         await db.add_user(m.from_user.id)
