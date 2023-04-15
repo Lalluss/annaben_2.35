@@ -1,52 +1,51 @@
-#created by @lallu_tgs
 
-
-import time
+from asyncio import sleep
 from pyrogram import Client, filters
-from pyrogram.types import *
-from database.progress import progress_for_pyrogram
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from pyrogram.errors import FloodWait
+import humanize
+from info import ADMINS , FLOOD, RENAME_MODE
+import random
 
 
-DOWNLOAD_START = "<b>Downloading To My server !! Pls Wait</b>"
-UPLOAD_START = "<b>Downloading Completed Now I'm Uploading Into TeleGram</b>"
-AFTER_SUCCESSFUL_UPLOAD_MSG = "<b>Thank you for Using Me Support Channel @LSBOTZ_UPDATE</b>"
 
-@Client.on_message(filters.command("rename"))
-async def rename(client, message):
-          try:
-             if not message.reply_to_message and not message.reply_to_message.media:
-                     return await message.reply("reply to media's")
-             elif len(message.command) <2:
-                  return await message.reply("provide some text with in extinction!\n for example: `/rename movies.mkv`")
-             name = message.text.split(None, 1)[1]
-             if message.reply_to_message.media:
-                 a = await client.send_message(
-        chat_id=message.chat.id,
-        text=DOWNLOAD_START,
-        reply_to_message_id=message.id
-        )
-                 c_time = time.time()
-                 downloads = await message.reply_to_message.download(
-                     file_name=name,
-                     progress=progress_for_pyrogram,
-                     progress_args=(
-                DOWNLOAD_START,
-                a,
-                c_time
-            ))
-                 await client.edit_message_text(
-                text=UPLOAD_START,
-                chat_id=message.chat.id,
-                message_id=a.id
-                )
-                 await message.reply_document(downloads)
-                 await client.edit_message_text(
-                text=AFTER_SUCCESSFUL_UPLOAD_MSG,
-                chat_id=message.chat.id,
-                message_id=a.id,
-                disable_web_page_preview=True
-           )
-                 
-          except Exception as error:
-                 await message.reply(f"**ERROR**: {error}")
-             
+@Client.on_message( filters.private & (filters.document | filters.audio | filters.video))
+async def rename_start(client, message):
+    if (LAZY_MODE==True):
+        if message.from_user.id in ADMINS :
+            file = getattr(message, message.media.value)
+            filesize = humanize.naturalsize(file.file_size) 
+            filename = file.file_name
+            text = f"""\n\n**Please tell, what should i do with this file.?**\n\n**🎞File Name** :- `{filename}`\n\n⚙️**File Size** :- `{filesize}`"""
+            buttons = [[ InlineKeyboardButton("📝✧✧ S𝚝ar𝚝 re𝚗aᗰi𝚗g ✧✧📝", callback_data="rename") ],
+                       [ InlineKeyboardButton("⨳  C L Ф S Ξ  ⨳", callback_data="cancel") ]]
+            await message.reply_text(text=text, reply_to_message_id=message.id, reply_markup=InlineKeyboardMarkup(buttons))
+
+        elif message.from_user.id :
+            file = getattr(message, message.media.value)
+            filesize = humanize.naturalsize(file.file_size) 
+            filename = file.file_name
+            try:
+                text = f"""\n\n**Please tell, what should i do with this file.?**\n\n**🎞File Name** :- `{filename}`\n\n⚙️**File Size** :- `{filesize}`"""
+                buttons = [[ InlineKeyboardButton("📝✧✧ S𝚝ar𝚝 re𝚗aᗰi𝚗g ✧✧📝", callback_data="rename") ],
+                           [ InlineKeyboardButton("⨳  C L Ф S Ξ  ⨳", callback_data="cancel") ]]
+                await message.reply_text(text=text, reply_to_message_id=message.id, reply_markup=InlineKeyboardMarkup(buttons))
+                await sleep(FLOOD)
+            except FloodWait as e:
+                await sleep(e.value)
+                text = f"""\n\n**Please tell, what should i do with this file.?**\n\n**🎞File Name** :- `{filename}`\n\n⚙️**File Size** :- `{filesize}`"""
+                buttons = [[ InlineKeyboardButton("📝✧✧ S𝚝ar𝚝 re𝚗aᗰi𝚗g ✧✧📝", callback_data="rename") ],
+                           [ InlineKeyboardButton("⨳  C L Ф S Ξ  ⨳", callback_data="cancel") ]]
+                await message.reply_text(text=text, reply_to_message_id=message.id, reply_markup=InlineKeyboardMarkup(buttons))
+            except:
+                pass
+        else:
+            file = getattr(message, message.media.value)
+            filesize = humanize.naturalsize(file.file_size) 
+            filename = file.file_name
+            text = f"""\n\n**Please tell, what should i do with this file.?**\n\n**🎞File Name** :- `{filename}`\n\n⚙️**File Size** :- `{filesize}`"""
+            buttons = [[ InlineKeyboardButton("📝✧✧ S𝚝ar𝚝 re𝚗aᗰi𝚗g ✧✧📝", callback_data="requireauth") ],
+                        [ InlineKeyboardButton("⨳  C L Ф S Ξ  ⨳", callback_data="cancel") ]]
+            await message.reply_text(text=text, reply_to_message_id=message.id, reply_markup=InlineKeyboardMarkup(buttons))
+    else:
+        return
