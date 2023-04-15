@@ -28,6 +28,10 @@ NOR_IMG = environ.get("NOR_IMG", "https://telegra.ph/file/b0547878f0968383d3880.
 MELCOW_VID = environ.get("MELCOW_VID", "https://telegra.ph/file/451f038b4e7c2ddd10dc0.mp4")
 SPELL_IMG = environ.get("SPELL_IMG", "https://telegra.ph/file/5e2d4418525832bc9a1b9.jpg")
 
+#rename
+FLOOD = int(environ.get("FLOOD", "10"))
+RENAME_MODE = bool(environ.get("RENAME_MODE"))
+
 # Admins, Channels & Users
 ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '').split()]
 CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '0').split()]
