@@ -4,8 +4,11 @@ from pyrogram.enums import MessageMediaType
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, ForceReply
 
 
-@Client.on_message(filters.private & filters.reply)
+@Client.on_message(filters.private & filters.reply.command("rename')
 async def refunc(client, message):
+
+    if not message.reply_to_message and not message.reply_to_message.media:
+          return await message.reply("reply to media's")
     if (message.reply_to_message.reply_markup) and isinstance(message.reply_to_message.reply_markup, ForceReply):
         new_name = message.text
         await message.delete()
