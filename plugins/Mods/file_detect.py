@@ -4,7 +4,7 @@ from pyrogram.enums import MessageMediaType
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, ForceReply
 
 
-@Client.on_message(filters.private & filters.reply.command("rename')
+@Client.on_message(filters.private & filters.reply.command("rename"))
 async def refunc(client, message):
 
     if not message.reply_to_message and not message.reply_to_message.media:
