@@ -14,7 +14,7 @@ from pyrogram.errors import FloodWait, UserIsBlocked, MessageNotModified, PeerId
 from utils import get_size, is_subscribed, get_poster, search_gagala, temp, get_settings, save_group_settings
 from database.users_chats_db import db
 from database.ia_filterdb import Media, get_file_details, get_search_results
-from plugins.group_filter import global_filters
+from plugins.pm_filter import global_filters
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.ERROR)
