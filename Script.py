@@ -22,14 +22,6 @@ class script(object):
     HELP_TXT = """<b>Hᴇʏ {}
 Hᴇʀᴇ Is Tʜᴇ Hᴇʟᴘ Fᴏʀ Mʏ Cᴏᴍᴍᴀɴᴅs.</b>"""
 
-    NORMSG_TXT = """
-🎪 ᴛɪᴛɪʟᴇ {query}
-
-┏ 🤴 ᴀsᴋᴇᴅ ʙʏ : {}</b>
-┣ ⚡ ᴘᴏᴡᴇʀᴇᴅ ʙʏ : <a href="https://t.me/botechs_bot"> 𝐀𝐧𝐧𝐚_𝐁𝐞𝐧 </a>
-┗ 🍁 ᴄʜᴀɴɴᴇʟ : @benana_mvs
-
-★ ᴘᴏᴡᴇʀᴇᴅ ʙʏ : ✵{message.chat.title}</b>"""
 
     INST_TXT = """
      ▇ 𝙸𝙽𝚂𝚃𝚁𝚄𝙲𝚃𝙸𝙾𝙽𝚂 ▇
