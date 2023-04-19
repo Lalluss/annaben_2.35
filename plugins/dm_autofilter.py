@@ -139,17 +139,10 @@ async def pm_filter(client, msg, spoll=False):
                 if SPELL_MODE:  
                     reply = search.replace(" ", "+")
                     reply_markup = InlineKeyboardMarkup([[
-                        InlineKeyboardButton("📁𝙸𝙽𝚂𝚃𝚁𝚄𝙲𝚃𝙸𝙾𝙽𝚂📁", callback_data="inst")
-                    ],[
-                        InlineKeyboardButton("ᴍᴀʟ", callback_data="mal"),
-                        InlineKeyboardButton("ᴛᴀᴍ", callback_data="tam"),
-                        InlineKeyboardButton("ʜɪɴ", callback_data="bet"),
-                        InlineKeyboardButton("ᴇɴɢ", callback_data="eng")
-                    ],[
-                        InlineKeyboardButton("🔍ꜱᴇᴀʀᴄʜ ɢᴏᴏɢʟ🔎", url=f"https://google.com/find?q={reply}")
+                        InlineKeyboardButton("🔍ꜱᴇᴀʀᴄʜ ɢᴏᴏɢʟ🔎", url=f"https://google.com/search?q={reply}")
                     ]])
-                    #imdb=await get_poster(search)
-                    #if imdb and imdb.get('poster'):
+                     imdb=await get_poster(search)
+                     if imdb and imdb.get('poster'):
                     #remove imdb spellcheck its your choice
                         lallu=await message.reply_photo((photo=imdb.get('poster'), caption=SPELL_TXT.format(mention=message.from_user.mention, query=search, title=imdb.get('title'), genres=imdb.get('genres'), year=imdb.get('year'), rating=imdb.get('rating'), short=imdb.get('short_info'), url=imdb['url']), reply_markup=reply_markup) 
                        #lallu=await message.reply_text((text=SPELL_TXT.format(mention=message.from_user.mention, query=search, title=imdb.get('title'), genres=imdb.get('genres'), year=imdb.get('year'), rating=imdb.get('rating'), short=imdb.get('short_info'), url=imdb['url']), reply_markup=reply_markup)
