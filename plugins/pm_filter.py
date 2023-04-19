@@ -158,23 +158,7 @@ async def next_page(bot, query):
                 ]
                 for file in files
             ]
-    try:
-        if settings['auto_delete']:
-            btn.insert(0, 
-                [
-                    InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo'),
-                    InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'sinfo')
-                ]
-            )
 
-        else:
-            btn.insert(0, 
-                [
-                    InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'minfo'),
-                    InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'sinfo')
-                ]
-            )
-                
     except KeyError:
         grpid = await active_connection(str(query.message.from_user.id))
         await save_group_settings(grpid, 'auto_delete', True)
@@ -1745,21 +1729,6 @@ async def auto_filter(client, msg, spoll=False):
     try:
         key = f"{message.chat.id}-{message.id}"
         BUTTONS[key] = search
-        if settings['auto_delete']:
-            btn.insert(0, 
-                [
-                    InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo'),
-                    InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'sinfo')
-                ]
-            )
-
-        else:
-            btn.insert(0, 
-                [
-                    InlineKeyboardButton(f' ɪɴꜰᴏ', 'info'),
-                    InlineKeyboardButton(f'ᴛɪᴘs​ ', 'tips')
-                ]
-            )
                 
     except KeyError:
         grpid = await active_connection(str(message.from_user.id))
