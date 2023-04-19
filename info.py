@@ -28,6 +28,14 @@ NOR_IMG = environ.get("NOR_IMG", "https://telegra.ph/file/02c0f95ed81c4f1041d02.
 MELCOW_VID = environ.get("MELCOW_VID", "https://telegra.ph/file/451f038b4e7c2ddd10dc0.mp4")
 SPELL_IMG = environ.get("SPELL_IMG", "https://telegra.ph/file/5e2d4418525832bc9a1b9.jpg")
 
+#pmfiltet
+PMFILTER = environ.get('PMFILTER', "True")
+PM_IMDB = environ.get('PM_IMDB', "False")
+G_FILTER = bool(environ.get("G_FILTER", True))
+SPELL_CHECK_REPLY = is_enabled(environ.get("SPELL_CHECK_REPLY", "True"), True)
+IMDB_DELET_TIME = int(environ.get('IMDB_DELET_TIME', "250"))
+
+
 #rename
 FLOOD = int(environ.get("FLOOD", "10"))
 RENAME_MODE = bool(environ.get("RENAME_MODE"))
