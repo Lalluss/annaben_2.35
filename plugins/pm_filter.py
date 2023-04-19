@@ -179,13 +179,7 @@ async def next_page(bot, query):
         grpid = await active_connection(str(query.message.from_user.id))
         await save_group_settings(grpid, 'auto_delete', True)
         settings = await get_settings(query.message.chat.id)
-        if settings['auto_delete']:
-        else:
-            btn.insert(0, 
-                [
-                    InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'minfo')
-                ]
-            )
+
     try:
         settings = await get_settings(query.message.chat.id)
         if settings['max_btn']:
