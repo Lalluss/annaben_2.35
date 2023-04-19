@@ -159,11 +159,6 @@ async def next_page(bot, query):
                 for file in files
             ]
 
-    except KeyError:
-        grpid = await active_connection(str(query.message.from_user.id))
-        await save_group_settings(grpid, 'auto_delete', True)
-        settings = await get_settings(query.message.chat.id)
-
     try:
         settings = await get_settings(query.message.chat.id)
         if settings['max_btn']:
@@ -1729,11 +1724,6 @@ async def auto_filter(client, msg, spoll=False):
     try:
         key = f"{message.chat.id}-{message.id}"
         BUTTONS[key] = search
-                
-    except KeyError:
-        grpid = await active_connection(str(message.from_user.id))
-        await save_group_settings(grpid, 'auto_delete', True)
-        settings = await get_settings(message.chat.id)
 
     btn.insert(0, [
         InlineKeyboardButton("Send All !", callback_data=f"send_fall#{pre}#{message.chat.id}-{message.id}#{0}"),
