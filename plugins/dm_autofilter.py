@@ -127,7 +127,7 @@ async def pm_spoll_tester(bot, query):
         await k.delete()
 
 
-async def pm_filter(client, msg, spoll=False):
+async def auto_filter(client, msg, spoll=False):
     if not spoll:
         message = msg
         if re.findall("((^\/|^,|^!|^\.|^[\U0001F600-\U000E007F]).*)", message.text):
@@ -141,7 +141,9 @@ async def pm_filter(client, msg, spoll=False):
                     reply_markup = InlineKeyboardMarkup([[
                         InlineKeyboardButton("🔍ꜱᴇᴀʀᴄʜ ɢᴏᴏɢʟ🔎", url=f"https://google.com/search?q={reply}")
                     ]])
-                        lallu=await message.reply_photo((photo="https://telegra.ph/file/bcb364d0c94dfdc2527c6.jpg", text=SPELL_TXT.format(mention=message.from_user.mention, query=search, title=imdb.get('title'), genres=imdb.get('genres'), year=imdb.get('year'), rating=imdb.get('rating'), short=imdb.get('short_info'), url=imdb['url']), reply_markup=reply_markup) 
+                    imdb=await get_poster(search)
+                    if imdb and imdb.get('poster'):
+                        lallu=await message.reply_photo(photo=imdb.get('poster'), caption=SPELL_TXT.format(mention=message.from_user.mention, query=search, title=imdb.get('title'), genres=imdb.get('genres'), year=imdb.get('year'), rating=imdb.get('rating'), short=imdb.get('short_info'), url=imdb['url']), reply_markup=reply_markup)
                         await asyncio.sleep(60)                   
                         await lallu.delete()
                         return
