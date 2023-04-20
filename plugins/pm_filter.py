@@ -1243,7 +1243,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "filters":
-        await query.message.delete()
         buttons = [[
             InlineKeyboardButton('ᴍ ғɪʟᴛᴇʀ', callback_data='manuelfilter'),
             InlineKeyboardButton('ᴀ ғɪʟᴛᴇʀ', callback_data='autofilter')
@@ -1264,7 +1263,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "global_filters":
-        await query.message.delete()
         buttons = [[
             InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='filters')
         ]]
@@ -1304,7 +1302,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "about":
-        await query.message.delete()
         buttons = [[
             InlineKeyboardButton('sᴜᴘᴘᴏʀᴛ', url=GRP_LNK),
             InlineKeyboardButton('sᴏᴜʀᴄᴇ', callback_data='source')
@@ -1324,7 +1321,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "lang":
-        await query.message.delete()
         buttons = [[
                     InlineKeyboardButton('🔮sᴇʟᴇᴄᴛ ʏᴏɪʀ ʟᴀɴɢ🔮', callback_data='lang')
                 ],[
@@ -1348,7 +1344,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "thank":
-        await query.message.delete()
         buttons = [[
             InlineKeyboardButton('ᴀᴅᴅ ᴍᴇ', url=f'https://t.me/botechs_bot?startgroup=true'),
         ],[
@@ -1367,7 +1362,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "astart":
-        await query.message.delete()
         buttons = [[
             InlineKeyboardButton('sᴛᴀʀᴛ', callback_data='lang'),
             InlineKeyboardButton('ᴄʟᴏsᴇ', callback_data='close_data')
@@ -1384,7 +1378,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "source":
-        await query.message.delete()
         buttons = [[
             InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='about')
         ]]
@@ -1400,7 +1393,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "manuelfilter":
-        await query.message.delete()
         buttons = [[
             InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='filters'),
             InlineKeyboardButton('ʙᴜᴛᴛᴏɴs', callback_data='button')
@@ -1417,7 +1409,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "button":
-        await query.message.delete()
         buttons = [[
             InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='manuelfilter')
         ]]
@@ -1433,7 +1424,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "autofilter":
-        await query.message.delete()
         buttons = [[
             InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='filters')
         ]]
@@ -1449,7 +1439,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "coct":
-        await query.message.delete()
         buttons = [[
             InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='help')
         ]]
@@ -1465,7 +1454,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "extra":
-        await query.message.delete()
         buttons = [[
             InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='help'),
             InlineKeyboardButton('ᴀᴅᴍɪɴ', callback_data='admin')
@@ -1482,7 +1470,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "store_file":
-        await query.message.delete()
         buttons = [[
             InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='help')
         ]]
@@ -1513,7 +1500,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "admin":
-        await query.message.delete()
         buttons = [[
             InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='extra')
         ]]
@@ -1529,6 +1515,20 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "stats":
+    msg = await message.reply_text("Initialising")
+    await msg.edit("Initialising ✪⍟⍟⍟⍟⍟")
+    time.sleep(1)
+    await msg.edit("Initialising ✪✪⍟⍟⍟⍟")
+    time.sleep(1)
+    await msg.edit("Initialising ✪✪✪⍟⍟⍟")
+    time.sleep(1)
+    await msg.edit("Initialising ✪✪✪✪⍟⍟")
+    time.sleep(1)
+    await msg.edit("Initialising ✪✪✪✪✪⍟")
+    time.sleep(1)
+    await msg.edit("Initialising ✪✪✪✪✪✪")
+    time.sleep(1)
+    await msg.edit("✪Connection Successful✪")
         buttons = [[
             InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='help'),
             InlineKeyboardButton('7ᴜᴘ', callback_data='rfrsh')
@@ -1694,11 +1694,11 @@ async def auto_filter(client, msg, spoll=False):
                         InlineKeyboardButton("ʜɪɴ", callback_data="bet"),
                         InlineKeyboardButton("ᴇɴɢ", callback_data="eng")
                     ],[
-                        InlineKeyboardButton("🔍ꜱᴇᴀʀᴄʜ ɢᴏᴏɢʟ🔎", url=f"https://google.com/find?q={reply}")
+                        InlineKeyboardButton("🔍ꜱᴇᴀʀᴄʜ ɢᴏᴏɢʟ🔎", url=f"https://google.com/search?q={reply}")
                     ]])
                     imdb=await get_poster(search)
                     if imdb and imdb.get('poster'):
-                        lallu=await message.reply_photo(photo=imdb.get('poster'), caption=SPELL_TXT.format(mention=message.from_user.mention, query=search, title=imdb.get('title'), genres=imdb.get('genres'), year=imdb.get('year'), rating=imdb.get('rating'), short=imdb.get('short_info'), url=imdb['url']), reply_markup=reply_markup)
+                        lallu=await message.reply_photo(photo=SPELL_IMG, caption=SPELL_TXT.format(mention=message.from_user.mention, query=search, title=imdb.get('title'), genres=imdb.get('genres'), year=imdb.get('year'), rating=imdb.get('rating'), short=imdb.get('short_info'), url=imdb['url']), reply_markup=reply_markup)
                         await asyncio.sleep(60)                   
                         await lallu.delete()
                         return
@@ -1937,6 +1937,9 @@ async def auto_filter(client, msg, spoll=False):
         if message.chat.id == SUPPORT_CHAT_ID:
             await message.reply_text(f"<b>Hᴇʏ {message.from_user.mention}, {str(total_results)} ʀᴇsᴜʟᴛs ᴀʀᴇ ғᴏᴜɴᴅ ɪɴ ᴍʏ ᴅᴀᴛᴀʙᴀsᴇ ғᴏʀ ʏᴏᴜʀ ᴏ̨ᴜᴇʀʏ {search}. Kɪɴᴅʟʏ ᴜsᴇ ɪɴʟɪɴᴇ sᴇᴀʀᴄʜ ᴏʀ ᴍᴀᴋᴇ ᴀ ɢʀᴏᴜᴘ ᴀɴᴅ ᴀᴅᴅ ᴍᴇ ᴀs ᴀᴅᴍɪɴ ᴛᴏ ɢᴇᴛ ᴍᴏᴠɪᴇ ғɪʟᴇs. Tʜɪs ɪs ᴀ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ sᴏ ᴛʜᴀᴛ ʏᴏᴜ ᴄᴀɴ'ᴛ ɢᴇᴛ ғɪʟᴇs ғʀᴏᴍ ʜᴇʀᴇ...\n\nFᴏʀ Mᴏᴠɪᴇs, Jᴏɪɴ @free_movies_all_languages</b>")
         else:
+            m=await message.reply_text("🔍")
+            await asyncio.sleep(3)
+            await m.delete()
             fuk = await message.reply_photo(photo=NOR_IMG, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
             try:
                 if settings['auto_delete']:
