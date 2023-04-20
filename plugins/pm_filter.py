@@ -1515,25 +1515,25 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "stats":
-    msg = await message.reply_text("Initialising")
-    await msg.edit("Initialising ✪⍟⍟⍟⍟⍟")
-    time.sleep(1)
-    await msg.edit("Initialising ✪✪⍟⍟⍟⍟")
-    time.sleep(1)
-    await msg.edit("Initialising ✪✪✪⍟⍟⍟")
-    time.sleep(1)
-    await msg.edit("Initialising ✪✪✪✪⍟⍟")
-    time.sleep(1)
-    await msg.edit("Initialising ✪✪✪✪✪⍟")
-    time.sleep(1)
-    await msg.edit("Initialising ✪✪✪✪✪✪")
-    time.sleep(1)
-    await msg.edit("✪Connection Successful✪")
         buttons = [[
             InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='help'),
             InlineKeyboardButton('7ᴜᴘ', callback_data='rfrsh')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        msg = await message.reply_text("Initialising")
+        await msg.edit("Initialising ✪⍟⍟⍟⍟⍟")
+        time.sleep(1)
+        await msg.edit("Initialising ✪✪⍟⍟⍟⍟")
+        time.sleep(1)
+        await msg.edit("Initialising ✪✪✪⍟⍟⍟")
+        time.sleep(1)
+        await msg.edit("Initialising ✪✪✪✪⍟⍟")
+        time.sleep(1)
+        await msg.edit("Initialising ✪✪✪✪✪⍟")
+        time.sleep(1)
+        await msg.edit("Initialising ✪✪✪✪✪✪")
+        time.sleep(1)
+        await msg.edit("✪Connection Successful✪")
         await client.edit_message_media(
             query.message.chat.id, 
             query.message.id, 
