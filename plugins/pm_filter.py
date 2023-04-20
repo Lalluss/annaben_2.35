@@ -1158,9 +1158,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
 
         reply_markup = InlineKeyboardMarkup(buttons)
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto(random.choice(PICS))
+        )
         await query.message.edit_text(
-            text=script.SMAL_TXT.format(query.from_user.mention),
-            disable_web_page_preview=True,
+            text=script.SMAL_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
@@ -1179,9 +1183,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
 
         reply_markup = InlineKeyboardMarkup(buttons)
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto(random.choice(PICS))
+        )
         await query.message.edit_text(
-            text=script.SHIN_TXT.format(query.from_user.mention),
-            disable_web_page_preview=True,
+            text=script.SHIN_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
@@ -1200,9 +1208,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
 
         reply_markup = InlineKeyboardMarkup(buttons)
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto(random.choice(PICS))
+        )
         await query.message.edit_text(
-            text=script.SENG_TXT.format(query.from_user.mention),
-            disable_web_page_preview=True,
+            text=script.SENG_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
@@ -1220,9 +1232,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('𝙱𝙰𝙲𝙺', callback_data='thank')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto(random.choice(PICS))
+        )
         await query.message.edit_text(
-            text=script.STAM_TXT.format(query.from_user.mention),
-            disable_web_page_preview=True,
+            text=script.STAM_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
@@ -1237,11 +1253,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]  
      
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.send_message(
-            text=script.ALL_FILTERS.format(query.from_user.mention),
-            chat_id=query.message.chat.id,
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto(random.choice(PICS))
+        )
+        await query.message.edit_text(
+            text=script.ALL_FILTERS.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
-            disable_web_page_preview=True,
             parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "global_filters":
@@ -1251,13 +1270,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
 
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.send_message(
-            text=script.GFILTER_TXT.format(query.from_user.mention),
-            chat_id=query.message.chat.id,
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto(random.choice(PICS))
+        )
+        await query.message.edit_text(
+            text=script.GFILTER_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
-            disable_web_page_preview=True,
             parse_mode=enums.ParseMode.HTML
-        )    
+        )
     elif query.data == "help":
         buttons = [[
             InlineKeyboardButton('FIʟᴛᴇʀs', callback_data='filters'),
@@ -1291,11 +1313,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('Cʟᴏsᴇ', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.send_message(
-            text=script.ABOUT_TXT.format(query.from_user.mention),
-            chat_id=query.message.chat.id,
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto(random.choice(PICS))
+        )
+        await query.message.edit_text(
+            text=script.ABOUT_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
-            disable_web_page_preview=True,
             parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "lang":
@@ -1312,11 +1337,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
                   ]]
       
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.send_message(
-            text=script.START_TXT.format(query.from_user.mention),
-            chat_id=query.message.chat.id,
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto(random.choice(PICS))
+        )
+        await query.message.edit_text(
+            text=script.LANG_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
-            disable_web_page_preview=True,
             parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "thank":
@@ -1328,11 +1356,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('𝚌𝚕𝚘𝚜𝚎', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.send_message(
-            text=script.THANK_TXT.format(query.from_user.mention),
-            chat_id=query.message.chat.id,
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto(random.choice(PICS))
+        )
+        await query.message.edit_text(
+            text=script.THANK_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
-            disable_web_page_preview=True,
             parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "astart":
@@ -1342,11 +1373,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('𝙲𝙻𝙾𝚂𝙴', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.send_message(
-            text=script.ASTART_TXT.format(query.from_user.mention),
-            chat_id=query.message.chat.id,
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto(random.choice(PICS))
+        )
+        await query.message.edit_text(
+            text=script.ASTART_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
-            disable_web_page_preview=True,
             parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "source":
@@ -1355,11 +1389,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.send_message(
-            text=script.SOURCE_TXT.format(query.from_user.mention),
-            chat_id=query.message.chat.id,
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto(random.choice(PICS))
+        )
+        await query.message.edit_text(
+            text=script.SOURCE_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
-            disable_web_page_preview=True,
             parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "manuelfilter":
@@ -1369,11 +1406,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('Bᴜᴛᴛᴏɴs', callback_data='button')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.send_message(
-            text=script.MANUELFILTER_TXT.format(query.from_user.mention),
-            chat_id=query.message.chat.id,
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto(random.choice(PICS))
+        )
+        await query.message.edit_text(
+            text=script.MANUELFILTER_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
-            disable_web_page_preview=True,
             parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "button":
@@ -1382,11 +1422,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='manuelfilter')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.send_message(
-            text=script.BUTTON_TXT.format(query.from_user.mention),
-            chat_id=query.message.chat.id,
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto(random.choice(PICS))
+        )
+        await query.message.edit_text(
+            text=script.BUTTON_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
-            disable_web_page_preview=True,
             parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "autofilter":
@@ -1395,11 +1438,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='filters')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.send_message(
-            text=script.AUTOFILTER_TXT.format(query.from_user.mention),
-            chat_id=query.message.chat.id,
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto(random.choice(PICS))
+        )
+        await query.message.edit_text(
+            text=script.AUTOFILTER_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
-            disable_web_page_preview=True,
             parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "coct":
@@ -1408,11 +1454,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.send_message(
-            text=script.CONNECTION_TXT.format(query.from_user.mention),
-            chat_id=query.message.chat.id,
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto(random.choice(PICS))
+        )
+        await query.message.edit_text(
+            text=script.CONNECT_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
-            disable_web_page_preview=True,
             parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "extra":
@@ -1422,24 +1471,30 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('Aᴅᴍɪɴ', callback_data='admin')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.send_message(
-            text=script.EXTRAMOD_TXT.format(query.from_user.mention),
-            chat_id=query.message.chat.id,
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto(random.choice(PICS))
+        )
+        await query.message.edit_text(
+            text=script.EXTRAMODE_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
-            disable_web_page_preview=True,
             parse_mode=enums.ParseMode.HTML
-        )    
+        )
     elif query.data == "store_file":
         await query.message.delete()
         buttons = [[
             InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.send_message(
-            text=script.FILE_STORE_TXT.format(query.from_user.mention),
-            chat_id=query.message.chat.id,
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto(random.choice(PICS))
+        )
+        await query.message.edit_text(
+            text=script.FILE_STORE_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
-            disable_web_page_preview=True,
             parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "gtfl":
@@ -1447,24 +1502,29 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('DOWNLOAD', url=await get_shortlink(query.message.chat.id, f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}"))
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=GTFL_TXT.format(temp.B_NAME),
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )    
-    elif query.data == "admin":
-        await query.message.delete()
-        buttons = [[
-            InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='extra')
-        ]]
         await client.edit_message_media(
             query.message.chat.id, 
             query.message.id, 
             InputMediaPhoto(random.choice(PICS))
         )
-        reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=script.ADMIN_TXT,
+            text=script.GTFL_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
+    elif query.data == "admin":
+        await query.message.delete()
+        buttons = [[
+            InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='extra')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto(random.choice(PICS))
+        )
+        await query.message.edit_text(
+            text=script.ADMIN_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
