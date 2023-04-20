@@ -1520,7 +1520,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('7ᴜᴘ', callback_data='rfrsh')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        msg = await message.reply_text("Initialising")
+        msg = await client.reply_text("Initialising")
         await msg.edit("Initialising ✪⍟⍟⍟⍟⍟")
         time.sleep(1)
         await msg.edit("Initialising ✪✪⍟⍟⍟⍟")
